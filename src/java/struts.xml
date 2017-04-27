@@ -22,5 +22,9 @@
             <result name="error">/error.jsp</result>
         </action>
         
+        <action name="organizar" class="action.OrganizarRutaAction">
+            <result name="success">/mostrarsugerencia.jsp</result>
+        </action>
+        
     </package>
 </struts>
