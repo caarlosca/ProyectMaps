@@ -21,7 +21,7 @@ import modelo.Lugares;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import se.walkercrou.places.GooglePlaces;
+//import se.walkercrou.places.GooglePlaces;
 
 /**
  *
