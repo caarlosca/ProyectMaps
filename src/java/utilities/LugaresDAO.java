@@ -15,6 +15,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.servlet.ServletContext;
 import maps.java.Geocoding;
+import maps.java.Places;
 import modelo.Lugares;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.web.context.WebApplicationContext;
@@ -95,25 +96,61 @@ public class LugaresDAO {
 
     
 
-    
-    public static void main(String ar[]) throws Exception {
-        float longitud;
-        float latitud;
-        
-        longitud=mostrarLongitud();
-         latitud=mostrarLatitud();
-        System.out.println(longitud);
-        System.out.println(latitud);
-       String nombre="Museo de cera";
-       String hsql = "SELECT c FROM Lugares c where c.nombre="+nombre+"";
-       System.out.println(hsql);
-           Geocoding ObjGeocod=new Geocoding();
+//    
+//    public static void main(String ar[]) throws Exception {
+//        float longitud;
+//        float latitud;
+//        
+//        longitud=mostrarLongitud();
+//         latitud=mostrarLatitud();
+//        System.out.println(longitud);
+//        System.out.println(latitud);
+//       String nombre="Museo de cera";
+//       String hsql = "SELECT c FROM Lugares c where c.nombre="+nombre+"";
+//       System.out.println(hsql);
+//           Geocoding ObjGeocod=new Geocoding();
+//         
+//         Point2D.Double resultadoCD=ObjGeocod.getCoordinates("sol");
+//         System.out.println("Las coordenadas de:"+nombre +
+//                    resultadoCD.x + "," + resultadoCD.y);
+//    }
+//    
+//    
+        public static void main(String ar[]) throws Exception {
+//        float longitud;
+//        float latitud;
+//        
+//        longitud=mostrarLongitud();
+//         latitud=mostrarLatitud();
+//        System.out.println(longitud);
+//        System.out.println(latitud);
+//       String nombre="Museo de cera";
+//       String hsql = "SELECT c FROM Lugares c where c.nombre="+nombre+"";
+//       System.out.println(hsql);
+//           Geocoding ObjGeocod=new Geocoding();
+//         
+//         Point2D.Double resultadoCD=ObjGeocod.getCoordinates("parque Atracciones");
+//         System.out.println("Las coordenadas de:"+nombre +
+//                    resultadoCD.x + "," + resultadoCD.y);
+//         
          
-         Point2D.Double resultadoCD=ObjGeocod.getCoordinates("sol");
-         System.out.println("Las coordenadas de:"+nombre +
-                    resultadoCD.x + "," + resultadoCD.y);
+//         Route ObjRout=new Route();
+//String[][] resultadoRuta=ObjRout.getRoute("Puerta del sol", "Museo de cera", null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
+//for(int i=0;i< resultadoRuta.length;i++){
+//   System.out.println("Tramo " + i + ":"+"</br>");
+//   for(int j=0;j< resultadoRuta [0].length;j++){
+//      System.out.print(resultadoRuta[i][j] + "\t");
+//   }
+//}
+         
+Places ObjPlace=new Places();
+String[][] resultadoPlaces=ObjPlace.getPlaces(40.4171111, -3.7031133, 3000, "", "", Places.Rankby.prominence, null);
+for(int i=0;i< resultadoPlaces.length;i++){
+   System.out.println("Place " + i + ":");
+   for(int j=0;j< resultadoPlaces[0].length;j++){
+      System.out.print(resultadoPlaces[i][j] + "\t");
+   }
+}
     }
-    
-    
     
 }
