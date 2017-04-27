@@ -44,6 +44,7 @@
     <body id="fondo" >
 
 
+
         <div class="error">
             <s:fielderror/>
         </div>
