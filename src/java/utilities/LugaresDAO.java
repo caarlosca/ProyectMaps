@@ -15,11 +15,13 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.servlet.ServletContext;
 import maps.java.Geocoding;
+import maps.java.MapsJava;
 import maps.java.Places;
 import modelo.Lugares;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+import se.walkercrou.places.GooglePlaces;
 
 /**
  *
@@ -116,6 +118,9 @@ public class LugaresDAO {
 //    }
 //    
 //    
+       public static void error(String funcionError){
+        System.err.println("Algo ocurrió, no se pudo ejecutar la función: " + funcionError);
+    }
         public static void main(String ar[]) throws Exception {
 //        float longitud;
 //        float latitud;
@@ -142,15 +147,37 @@ public class LugaresDAO {
 //      System.out.print(resultadoRuta[i][j] + "\t");
 //   }
 //}
-         
-Places ObjPlace=new Places();
-String[][] resultadoPlaces=ObjPlace.getPlaces(40.4171111, -3.7031133, 3000, "", "", Places.Rankby.prominence, null);
-for(int i=0;i< resultadoPlaces.length;i++){
-   System.out.println("Place " + i + ":");
-   for(int j=0;j< resultadoPlaces[0].length;j++){
-      System.out.print(resultadoPlaces[i][j] + "\t");
-   }
-}
+//         
+//Places ObjPlace=new Places();
+//String[][] resultadoPlaces=ObjPlace.getPlaces(40.4171111, -3.7031133, 3000, "", "", Places.Rankby.prominence, null);
+//for(int i=0;i< resultadoPlaces.length;i++){
+//   System.out.println("Place " + i + ":");
+//   for(int j=0;j< resultadoPlaces[0].length;j++){
+//      System.out.print(resultadoPlaces[i][j] + "\t");
+//   }
+//}
+// GooglePlaces google = new GooglePlaces("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
+               MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
+               String key= "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
+               MapsJava.APIkeyCheck(key);
+            System.out.println( MapsJava.APIkeyCheck(key));
+            
+            Places ObjPlace=new Places();
+            try {
+                String[][] resultado=ObjPlace.getPlaces(40.4171111, -3.7031133, 
+                        3000, "", "", Places.Rankby.distance, null);
+
+                for(int i=0;i<resultado.length;i++){
+                    System.out.println("Place " + i + ":");
+                    for(int j=0;j<resultado[0].length;j++){
+                        System.out.print(resultado[i][j] + "\t");
+                    }
+                    System.out.println("");
+                }
+            } catch (Exception e) {
+                error("Place");
+            }
+
     }
     
 }
