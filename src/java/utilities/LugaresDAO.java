@@ -73,7 +73,7 @@ public class LugaresDAO {
         emf.close();
         return latitud;
     }
-    /*prueba con id 1*/
+    /*prueba con id 1qwdphjdq0wdh0qwhd0qwpd*/
     public static float mostrarLongitud() {
         float longitud;
         EntityManagerFactory emf = getEntityManagerFactory();
