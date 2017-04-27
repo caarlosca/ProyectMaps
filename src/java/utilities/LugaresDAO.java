@@ -75,6 +75,7 @@ public class LugaresDAO {
     }
     /*prueba con id sdasdadasdasdasdas*/
     public static float mostrarLongitud() {
+        int hola;
         float longitud;
         EntityManagerFactory emf = getEntityManagerFactory();
         EntityManager em = emf.createEntityManager();
