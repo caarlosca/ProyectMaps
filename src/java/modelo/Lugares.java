@@ -28,6 +28,7 @@ public class Lugares implements Serializable {
     public Lugares() {
     }
 
+    //ejemplo git
     public Lugares(int id, float latitud, float longitud, String nombre) {
         this.id = id;
         this.latitud = latitud;
