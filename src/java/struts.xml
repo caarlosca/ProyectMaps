@@ -26,5 +26,8 @@
             <result name="success">/mostrarsugerencia.jsp</result>
         </action>
         
+
+        
     </package>
+
 </struts>
