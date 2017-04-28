@@ -4,6 +4,8 @@ package modelo;
  *
  * @author Luis Marcos
  */
+
+//adsd
 public class Ubicacion {
     
     private static double latitud=0.0;
