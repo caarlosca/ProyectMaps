@@ -27,6 +27,7 @@ import javax.swing.table.TableModel;
 import maps.java.Geocoding;
 import maps.java.MapsJava;
 import maps.java.Places;
+import maps.java.Route;
 import modelo.Lugares;
 import modelo.Ubicacion;
 import org.apache.struts2.ServletActionContext;
@@ -45,6 +46,8 @@ public class LugaresDAO {
     private Ubicacion ObjUbicacion = new Ubicacion();
     String[][] resultadoPlaces;
     private double fov = 0.0;
+    Route ObjRuta = new Route();
+    String[][] resultadoRuta;
 
     private static void iniciar() {
 
@@ -112,9 +115,6 @@ public class LugaresDAO {
         return longitud;
     }
 
-
-
-
     public String[][] getResultadoPlaces() {
         return resultadoPlaces;
     }
@@ -162,7 +162,6 @@ public class LugaresDAO {
             imageCargada = imageCargada.getScaledInstance(20, 20, Image.SCALE_FAST);
             placesReducido[i][2] = new ImageIcon(imageCargada);
         }
-       
 
         return resultadoPlaces;
     }
@@ -171,13 +170,37 @@ public class LugaresDAO {
         System.err.println("Algo ocurrió, no se pudo ejecutar la función: " + funcionError);
     }
 
+    private String[][] calcularRuta(String direccionSalida, String direccionLlegada) throws Exception {
+        resultadoRuta = ObjRuta.getRoute(direccionSalida, direccionLlegada, null, true, Route.mode.driving, Route.avoids.nothing);
+        String[][] datosRuta = new String[resultadoRuta.length][3];
+        /*for (int i = 0; i < datosRuta.length; i++) {
+            datosRuta[i][0] = resultadoRuta[i][0];
+            datosRuta[i][1] = resultadoRuta[i][1];
+            datosRuta[i][2]=Jsoup.parse(resultadoRuta[i][2]).text();
+        }*/
+        for (int i = 0; i < datosRuta.length; i++) {
+            System.out.println("Rutas " + i + ":");
+            for (int j = 0; j < datosRuta.length; j++) {
+                datosRuta[j][0] = resultadoRuta[j][0];
+                datosRuta[j][1] = resultadoRuta[j][1];
+                //datosRuta[j][2] = Jsoup.parse(resultadoRuta[j][2]).text();
+            }
+            System.out.println("");
+        }
+        //Extraemos sólo duración/distancia/indicaciones
+
+        return datosRuta;
+    }
+
     public static void main(String ar[]) throws Exception {
         LugaresDAO test = new LugaresDAO();
         Geocoding ObjGeocod = new Geocoding();
         Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Malaga");
 
-        Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-        test.buscarLocales(ObjUbicacion2);
+        /*Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
+        test.buscarLocales(ObjUbicacion2);*/
+        test.calcularRuta("Madrid", "Toledo");
+
 //MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
 //                   String key= "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
 //               MapsJava.APIkeyCheck(key);
@@ -198,7 +221,6 @@ public class LugaresDAO {
 //            } catch (Exception e) {
 //                error("Place");
 //            }
-
         //  test.rellenarTabla();
 //        float longitud;
 //        float latitud;
