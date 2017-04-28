@@ -1,0 +1,25 @@
+ 
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+
+<validators>
+   
+    <field name="email">
+        <field-validator type="email">
+            <param name="trim">true</param>
+            <message> Email no valido</message>
+        </field-validator>
+    </field>
+    <field name="cliente.url">
+        <field-validator type="url">
+            <param name="trim">true</param>
+            <message>Debes de introducir una URL valida</message>
+        </field-validator>
+    </field>
+    <field name="cliente.nombre">
+        <field-validator type="mivalidador">
+            <param name=""></param>    
+            <message>No me gusta</message>
+        </field-validator>
+    </field>
+</validators>
