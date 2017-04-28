@@ -8,9 +8,19 @@ package modelo;
 //adsd
 public class Ubicacion {
     
-    private static double latitud=0.0;
-    private static double longitud=0.0;
+    private  double latitud;
+    private  double longitud;
     private static String direccion;
+
+    public Ubicacion() {
+    }
+
+    public Ubicacion(double latitud, double longitud) {
+        this.latitud = latitud;
+        this.longitud = longitud;
+    }
+
+  
 
     public double getLatitud() {
         return latitud;

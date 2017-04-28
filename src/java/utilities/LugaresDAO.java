@@ -142,7 +142,7 @@ public class LugaresDAO {
         this.resultadoPlaces = resultadoPlaces;
     }
 
-    private String[][] buscarLocales() throws UnsupportedEncodingException, MalformedURLException, IOException {
+    private String[][] buscarLocales(Ubicacion ObjUbicacion) throws UnsupportedEncodingException, MalformedURLException, IOException {
         MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
         String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
         MapsJava.APIkeyCheck(key);
@@ -150,7 +150,7 @@ public class LugaresDAO {
 
         Places ObjPlace = new Places();
         try {
-            String[][] resultado = ObjPlace.getPlaces(40.4171111, -3.7031133,
+            String[][] resultado = ObjPlace.getPlaces(ObjUbicacion.getLatitud(), ObjUbicacion.getLongitud(),
                     3000, "", "", Places.Rankby.distance, null);
 
             for (int i = 0; i < resultado.length; i++) {
@@ -196,7 +196,11 @@ public class LugaresDAO {
 
     public static void main(String ar[]) throws Exception {
         LugaresDAO test = new LugaresDAO();
-        test.buscarLocales();
+        Geocoding ObjGeocod = new Geocoding();
+        Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Malaga");
+
+        Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
+        test.buscarLocales(ObjUbicacion2);
 //MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
 //                   String key= "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
 //               MapsJava.APIkeyCheck(key);
