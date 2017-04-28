@@ -41,6 +41,10 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 public class LugaresDAO {
 
     private static WebApplicationContext context;
+    private Places ObjPlaces = new Places();
+    private Ubicacion ObjUbicacion = new Ubicacion();
+    String[][] resultadoPlaces;
+    private double fov = 0.0;
 
     private static void iniciar() {
 
@@ -108,31 +112,8 @@ public class LugaresDAO {
         return longitud;
     }
 
-//    private ArrayList<String> tiposLocal(){
-//        ArrayList<String> locales=new ArrayList<>();
-//        for(int i=0;i<JList_TiposLocal.getModel().getSize();i++){
-//            locales.add(JList_TiposLocal.getModel().getElementAt(i).toString());
-//        }
-//        return locales;
-//    }
-//  private Places.Rankby buscarPor(){
-//        if(JCombo_BuscarPOR.getSelectedIndex()==0){
-//            return Places.Rankby.prominence;
-//        }else{
-//            return Places.Rankby.distance;
-//        }
-//    }
-//    private ArrayList<String> tiposLocal(){
-//        ArrayList<String> locales=new ArrayList<>();
-//        for(int i=0;i<JList_TiposLocal.getModel().getSize();i++){
-//            locales.add(JList_TiposLocal.getModel().getElementAt(i).toString());
-//        }
-//        return locales;
-//    }
-    private Places ObjPlaces = new Places();
-    private Ubicacion ObjUbicacion = new Ubicacion();
-    String[][] resultadoPlaces;
-    private double fov = 0.0;
+
+
 
     public String[][] getResultadoPlaces() {
         return resultadoPlaces;
@@ -163,11 +144,7 @@ public class LugaresDAO {
         } catch (Exception e) {
             error("Place");
         }
-//        String[][] resultadoPlaces=ObjPlaces.getPlaces(40.4171111, -3.7031133, 3000, "", "", Places.Rankby.prominence, null);
-//        this.rellenarTabla(resultadoPlaces);
-        //String direcResultUNO=resultadoPlaces[0][2] + "," + resultadoPlaces[0][3];
-//        this.dibujarMapa(direcResultUNO);
-//        this.dibujarStreetView(direcResultUNO);
+
         return resultadoPlaces;
     }
 
@@ -185,7 +162,7 @@ public class LugaresDAO {
             imageCargada = imageCargada.getScaledInstance(20, 20, Image.SCALE_FAST);
             placesReducido[i][2] = new ImageIcon(imageCargada);
         }
-        // TableModel tableModel=new TablaIconos(placesReducido, columnas);
+       
 
         return resultadoPlaces;
     }
