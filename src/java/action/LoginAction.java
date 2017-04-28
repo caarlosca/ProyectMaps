@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
 import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import utilities.PersonaDao;
 
-
+//alaoba
 public class LoginAction extends ActionSupport{
    
     private String email;
