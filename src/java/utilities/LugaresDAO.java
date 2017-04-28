@@ -171,25 +171,16 @@ public class LugaresDAO {
     }
 
     private String[][] calcularRuta(String direccionSalida, String direccionLlegada) throws Exception {
-        resultadoRuta = ObjRuta.getRoute(direccionSalida, direccionLlegada, null, true, Route.mode.driving, Route.avoids.nothing);
-        String[][] datosRuta = new String[resultadoRuta.length][3];
-        /*for (int i = 0; i < datosRuta.length; i++) {
-            datosRuta[i][0] = resultadoRuta[i][0];
-            datosRuta[i][1] = resultadoRuta[i][1];
-            datosRuta[i][2]=Jsoup.parse(resultadoRuta[i][2]).text();
-        }*/
-        for (int i = 0; i < datosRuta.length; i++) {
-            System.out.println("Rutas " + i + ":");
-            for (int j = 0; j < datosRuta.length; j++) {
-                datosRuta[j][0] = resultadoRuta[j][0];
-                datosRuta[j][1] = resultadoRuta[j][1];
-                //datosRuta[j][2] = Jsoup.parse(resultadoRuta[j][2]).text();
+        Route ObjRout = new Route();
+        String[][] resultadoRuta = ObjRout.getRoute(direccionSalida, direccionLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
+        for (int i = 0; i < resultadoRuta.length; i++) {
+            System.out.println("Tramo " + i + ":" + "</br>");
+            for (int j = 0; j < 3; j++) {
+                System.out.println(resultadoRuta[i][j] + "\t");
             }
-            System.out.println("");
         }
-        //Extraemos sólo duración/distancia/indicaciones
 
-        return datosRuta;
+        return resultadoRuta;
     }
 
     public static void main(String ar[]) throws Exception {
@@ -200,7 +191,6 @@ public class LugaresDAO {
         /*Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
         test.buscarLocales(ObjUbicacion2);*/
         test.calcularRuta("Madrid", "Toledo");
-
 //MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
 //                   String key= "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
 //               MapsJava.APIkeyCheck(key);
@@ -237,15 +227,6 @@ public class LugaresDAO {
 //         Point2D.Double resultadoCD=ObjGeocod.getCoordinates("parque Atracciones");
 //         System.out.println("Las coordenadas de:"+nombre +
 //                    resultadoCD.x + "," + resultadoCD.y);
-//         
-//         Route ObjRout=new Route();
-//String[][] resultadoRuta=ObjRout.getRoute("Puerta del sol", "Museo de cera", null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
-//for(int i=0;i< resultadoRuta.length;i++){
-//   System.out.println("Tramo " + i + ":"+"</br>");
-//   for(int j=0;j< resultadoRuta [0].length;j++){
-//      System.out.print(resultadoRuta[i][j] + "\t");
-//   }
-//}
 //         
 //Places ObjPlace=new Places();
 //String[][] resultadoPlaces=ObjPlace.getPlaces(40.4171111, -3.7031133, 3000, "", "", Places.Rankby.prominence, null);
