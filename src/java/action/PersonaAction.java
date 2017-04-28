@@ -11,10 +11,7 @@ import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import utilities.PersonaDao;
 
-@Action(value="insertar",
-        results={
-            @Result(name="success",location="/response.jsp"),
-            @Result(name="input",location="/formularioRegistro.jsp")})
+
 
 public class PersonaAction extends ActionSupport{
     private int id;
@@ -40,11 +37,7 @@ public String execute() {
     public String getNombre() {
         return nombre;
     }
-    @RequiredStringValidator(message= "El nombre es un campo obligatorio")
-    
-    @StringLengthFieldValidator(minLength = "3",
-            maxLength = "10",
-            message = "La longitud del nombre debe estar comprendida entre ${minLength} y ${maxLength} caracteres")
+   
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -52,8 +45,7 @@ public String execute() {
     public String getEmail() {
         return email;
     }
-    @RequiredStringValidator (message = "EMAIL ES OBLIGATORIO")
-    @EmailValidator(message = "Introduzca un email valido!")
+   
     public void setEmail(String email) {
         this.email = email;
     }
@@ -61,11 +53,7 @@ public String execute() {
     public String getContrasena() {
         return contrasena;
     }
-    @RequiredStringValidator(message= "La contraseña es un campo obligatorio")
-    
-    @StringLengthFieldValidator(minLength = "5",
-            maxLength = "10",
-            message = "La longitud de la contraseña debe estar comprendida entre ${minLength} y ${maxLength} caracteres")
+  
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }

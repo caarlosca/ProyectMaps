@@ -21,19 +21,19 @@
         
                     <tr>
                         <td>Fecha</td>
-                        <td><s:textfield cssClass="fecha" label="fecha" name="fecha"/></td>
-                        <td><s:property value="getFieldErrors().get('persona.email')[0]"/> </td>
+                        <td><s:textfield cssClass="fecha" label="fecha" type="date" name="fecha" /></td>
+                        <td><s:property value="getFieldErrors().get('fecha')[0]"/> </td>
 
                     </tr>
                     <tr>
                         <td>Zona de Partida: </td>
-                        <td><s:textfield cssClass="zonapartida" label="zonapartida" name="zonapartida"/></td>
-                        <td><s:property value="getFieldErrors().get('persona.contrasena')[0]"/> </td>
+                        <td><s:textfield cssClass="zonapartida" label="zonapartida" name="zonaDePartida"/></td>
+                        <td><s:property value="getFieldErrors().get('zonaDePartida')[0]"/> </td>
                     </tr>
                     <tr>
                         <td>KM: </td>
-                        <td><s:textfield cssClass="km" label="km" name="km"/></td>
-                        <td><s:property value="getFieldErrors().get('persona.contrasena')[0]"/> </td>
+                        <td><s:textfield cssClass="km" label="km" type="number" value="1" min="1" max="10" name="km"/></td>
+                        <td><s:property value="getFieldErrors().get('km')[0]"/> </td>
                     </tr>
                     <tr>
                         <td colspan="2"><s:submit value="organizar"/></td>              

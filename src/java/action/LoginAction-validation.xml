@@ -5,21 +5,20 @@
 <validators>
    
     <field name="email">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>Introduzca su correo</message>
+        </field-validator>
         <field-validator type="email">
             <param name="trim">true</param>
             <message> Email no valido</message>
         </field-validator>
     </field>
-    <field name="cliente.url">
-        <field-validator type="url">
+    <field name="contrasena">
+        <field-validator type="requiredstring">
             <param name="trim">true</param>
-            <message>Debes de introducir una URL valida</message>
+            <message>La contraseña es obligatoria</message>
         </field-validator>
     </field>
-    <field name="cliente.nombre">
-        <field-validator type="mivalidador">
-            <param name=""></param>    
-            <message>No me gusta</message>
-        </field-validator>
-    </field>
+   
 </validators>

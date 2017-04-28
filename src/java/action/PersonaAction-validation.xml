@@ -1,0 +1,43 @@
+ 
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+
+<validators>
+     <field name="nombre">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message> El nombre es un campo obligatorio</message>
+        </field-validator> 
+        <field-validator type="stringlength">
+            <param name="trim">true</param>
+            <param name="minLength">4</param>
+            <param name="maxLength">12</param>
+            <message> El nombre de usuario debe ser una cadena entre 4 y 12 caracteres</message>
+        </field-validator>   
+        
+    </field>
+ <field name="email">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>Introduzca su correo</message>
+        </field-validator>
+        <field-validator type="email">
+            <param name="trim">true</param>
+            <message> Email no valido</message>
+        </field-validator>
+    </field>
+    <field name="contrasena">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>La contraseña es obligatoria</message>
+        </field-validator>
+         <field-validator type="stringlength">
+            <param name="trim">true</param>
+            <param name="minLength">4</param>
+            <param name="maxLength">12</param>
+            <message> La longitud de la contraseña debe estar comprendida entre 4 y 12 caracteres</message>
+        </field-validator>   
+
+    </field>
+   
+</validators>

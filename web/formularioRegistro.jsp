@@ -57,18 +57,18 @@
                     <tr> 
                         <td>Nombre:</td>
                         <td><s:textfield cssClass="campo" label="Nombre" name="nombre"/></td>
-                        <td><s:property value="getFieldErrors().get('persona.nombre')[0]"/> </td>
+                        <td><s:property value="getFieldErrors().get('nombre')[0]"/> </td>
                     </tr>
                     <tr>
                         <td>Email:</td>
                         <td><s:textfield cssClass="campo" label="Email" name="email"/></td>
-                        <td><s:property value="getFieldErrors().get('persona.email')[0]"/> </td>
+                        <td><s:property value="getFieldErrors().get('email')[0]"/> </td>
 
                     </tr>
                     <tr>
                         <td>Contraseña:</td>
                         <td><s:textfield cssClass="campo" label="Contrasena" name="contrasena"/></td>
-                        <td><s:property value="getFieldErrors().get('persona.contrasena')[0]"/> </td>
+                        <td><s:property value="getFieldErrors().get('contrasena')[0]"/> </td>
                     </tr>
                     <tr>
                         <td colspan="2"><s:submit value="insertar"/></td>

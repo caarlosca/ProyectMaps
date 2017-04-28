@@ -3,37 +3,15 @@
 
 
 <validators>
-   <!-- <field name="cliente.nombre">
+    <field name="zonaDePartida">
         <field-validator type="requiredstring">
             <param name="trim">true</param>
-            <message> El nombre es un campo obligatorio</message>
+            <message> Debes introducir la zona de partida</message>
         </field-validator> 
-        <field-validator type="stringlength">
-            <param name="trim">true</param>
-            <param name="minLength">4</param>
-            <param name="maxLength">12</param>
-            <message> El nombre del cliente debe ser una cadena entre 4 y 12 caracteres</message>
-        </field-validator>   
-        <field-validator type="regex">
-            <param name="regex">[a-zA-Z]{5,10}</param>
-            <message> Entre 5 y 10 </message>
-        </field-validator>
-    </field> -->
-    <field name="cliente.salario">
-        <field-validator type="double">
-            <param name="minInclusive">1000.0</param>
-            <param name="maxInclusive">2000.0</param>
-            <message> El salario valido debe comprenderse entre 1000 y 2000 </message>
-        </field-validator>
     </field>
-    <field name="cliente.edad">
-        <field-validator type="int">
-            <param name="min">10</param>
-            <param name="max">20</param>
-            <message> La edad tiene que estar comprendida entre ${min} y ${max} años </message>
-        </field-validator>
-    </field>
-    <field name="cliente.fecha">
+   
+   
+    <field name="fecha">
         <field-validator type="date">
             <param name="trim">true</param>
             <param name="min">01/01/1900</param>
@@ -41,22 +19,5 @@
             <message> Fecha entre ${min} y ${max} </message>
         </field-validator>
     </field>
-    <field name="cliente.email">
-        <field-validator type="email">
-            <param name="trim">true</param>
-            <message> Email no valido</message>
-        </field-validator>
-    </field>
-    <field name="cliente.url">
-        <field-validator type="url">
-            <param name="trim">true</param>
-            <message>Debes de introducir una URL valida</message>
-        </field-validator>
-    </field>
-    <field name="cliente.nombre">
-        <field-validator type="mivalidador">
-            <param name=""></param>    
-            <message>No me gusta</message>
-        </field-validator>
-    </field>
+   
 </validators>

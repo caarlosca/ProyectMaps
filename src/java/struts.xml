@@ -9,7 +9,7 @@
         <action name="insertar" class="action.PersonaAction">
             <result name="success">/response.jsp</result>
             
-            <result name="input">/insertar.jsp</result>
+            <result name="input">/formularioRegistro.jsp</result>
         </action>
         
         <action name="mostrar" class="action.PersonaListaAction">
@@ -24,6 +24,7 @@
         
         <action name="organizar" class="action.OrganizarRutaAction">
             <result name="success">/mostrarsugerencia.jsp</result>
+             <result name="input">/organizarRuta.jsp</result>
         </action>
         
 

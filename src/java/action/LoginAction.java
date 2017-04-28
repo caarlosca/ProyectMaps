@@ -31,8 +31,7 @@ public class LoginAction extends ActionSupport{
     public String getEmail() {
         return email;
     }
-    @RequiredStringValidator (message = "EMAIL ES OBLIGATORIO")
-    @EmailValidator(message = "Introduzca un email valido!")
+  
     public void setEmail(String email) {
         this.email = email;
     }
@@ -40,11 +39,7 @@ public class LoginAction extends ActionSupport{
     public String getContrasena() {
         return contrasena;
     }
-    @RequiredStringValidator(message= "La contraseña es un campo obligatorio")
-    
-    @StringLengthFieldValidator(minLength = "5",
-            maxLength = "10",
-            message = "La longitud de la contraseña debe estar comprendida entre ${minLength} y ${maxLength} caracteres")
+
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
