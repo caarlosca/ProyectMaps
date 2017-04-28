@@ -175,8 +175,12 @@ public class LugaresDAO {
         String[][] resultadoRuta = ObjRout.getRoute(direccionSalida, direccionLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
         for (int i = 0; i < resultadoRuta.length; i++) {
             System.out.println("Tramo " + i + ":" + "</br>");
+            String calle=resultadoRuta[i][2];
+            System.out.println(calle);
+            //System.out.println(resultadoRuta[i][2] + "\t");
             for (int j = 0; j < 3; j++) {
                 System.out.println(resultadoRuta[i][j] + "\t");
+                
             }
         }
 
@@ -190,6 +194,7 @@ public class LugaresDAO {
 
         /*Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
         test.buscarLocales(ObjUbicacion2);*/
+        Ubicacion ObjUbicacion3 = new Ubicacion();
         test.calcularRuta("Madrid", "Toledo");
 //MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
 //                   String key= "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
