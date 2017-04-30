@@ -13,6 +13,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.imageio.ImageIO;
 import javax.persistence.EntityManager;
@@ -29,6 +30,7 @@ import maps.java.MapsJava;
 import maps.java.Places;
 import maps.java.Route;
 import modelo.Lugares;
+import modelo.Ruta;
 import modelo.Ubicacion;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.web.context.WebApplicationContext;
@@ -48,6 +50,9 @@ public class LugaresDAO {
     private double fov = 0.0;
     Route ObjRuta = new Route();
     String[][] resultadoRuta;
+
+    public LugaresDAO() {
+    }
 
     private static void iniciar() {
 
@@ -170,21 +175,25 @@ public class LugaresDAO {
         System.err.println("Algo ocurrió, no se pudo ejecutar la función: " + funcionError);
     }
 
-    private String[][] calcularRuta(String direccionSalida, String direccionLlegada) throws Exception {
+    public static ArrayList<Ruta> calcularRuta(String direccionSalida, String direccionLlegada) throws Exception {
         Route ObjRout = new Route();
-        String[][] resultadoRuta = ObjRout.getRoute(direccionSalida, direccionLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
+        String[][] resultadoRuta = ObjRout.getRoute(direccionSalida, direccionLlegada, null, Boolean.TRUE, Route.mode.driving, Route.avoids.nothing);
+        ArrayList<Ruta> ruta= new ArrayList<Ruta>();
         for (int i = 0; i < resultadoRuta.length; i++) {
-            System.out.println("Tramo " + i + ":" + "</br>");
-            String calle=resultadoRuta[i][2];
-            System.out.println(calle);
-            //System.out.println(resultadoRuta[i][2] + "\t");
-            for (int j = 0; j < 3; j++) {
-                System.out.println(resultadoRuta[i][j] + "\t");
-                
-            }
+            //System.out.println("Tramo " + i + ":" + "</br>");
+            String tramo = "Tramo " + i + ":" + "</br>";
+            String tiempo = resultadoRuta[i][0];
+            String distancia = resultadoRuta[i][1];
+            String indicaciones = resultadoRuta[i][2];
+            Ruta r1= new Ruta(tramo, resultadoRuta[i][0], resultadoRuta[i][1], resultadoRuta[i][2]);
+            ruta.add(r1);
+
+        }
+        for (Ruta ruta1 : ruta) {
+            System.out.println(ruta1);
         }
 
-        return resultadoRuta;
+        return ruta;
     }
 
     public static void main(String ar[]) throws Exception {

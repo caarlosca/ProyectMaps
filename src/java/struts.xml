@@ -27,6 +27,10 @@
              <result name="input">/organizarRuta.jsp</result>
         </action>
         
+        <action name="mostrarRuta" class="action.MostrarRutaAction" >
+            <result name="success">/mostrarRuta.jsp</result>
+        </action>
+        
 
         
     </package>
