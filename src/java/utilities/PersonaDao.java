@@ -19,8 +19,7 @@ import org.apache.struts2.ServletActionContext;
 
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-import static utilities.LugaresDAO.mostrarLatitud;
-import static utilities.LugaresDAO.mostrarLongitud;
+
 
 public class PersonaDao {
 

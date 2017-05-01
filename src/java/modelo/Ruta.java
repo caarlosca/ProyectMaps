@@ -36,11 +36,7 @@ public class Ruta implements Serializable {
     public void setDistancia(String distancia) {
         this.distancia = distancia;
     }
-    
-    
-
-
-    
+ 
 
     public String getTramo() {
         return tramo;

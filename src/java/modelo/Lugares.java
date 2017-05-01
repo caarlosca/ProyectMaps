@@ -6,7 +6,6 @@
 package modelo;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,54 +15,23 @@ import javax.persistence.Table;
  *
  * @author Curso Mañana
  */
-@Entity
+
 public class Lugares implements Serializable {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private float latitud;
-    private float longitud;
+    
     private String nombre;
+    private String calle;
+    private double longitud;
+    private double latitud;
 
     public Lugares() {
     }
 
-    //ejemplo gitaffasfafafaf
-    public Lugares(int id, float latitud, float longitud, String nombre) {
-        this.id = id;
-        this.latitud = latitud;
-        this.longitud = longitud;
+    public Lugares(String nombre, String calle, double longitud, double latitud) {
         this.nombre = nombre;
-    }
-
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public float getLatitud() {
-        return latitud;
-    }
-
-    public void setLatitud(float latitud) {
+        this.calle = calle;
+        this.longitud = longitud;
         this.latitud = latitud;
     }
-
-    public float getLongitud() {
-        return longitud;
-    }
-
-    public void setLongitud(float longitud) {
-        this.longitud = longitud;
-    }
-
-    
-
 
     public String getNombre() {
         return nombre;
@@ -73,10 +41,31 @@ public class Lugares implements Serializable {
         this.nombre = nombre;
     }
 
-    @Override
-    public String toString() {
-        return "Lugares{" + "id=" + id + ", latitud=" + latitud + ", longitud=" + longitud + ", nombre=" + nombre + '}';
+    public String getCalle() {
+        return calle;
     }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
+    }
+
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    
 
 
     
