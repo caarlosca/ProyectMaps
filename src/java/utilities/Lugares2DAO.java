@@ -40,8 +40,10 @@ public class Lugares2DAO {
     private double fov = 0.0;
     Route ObjRuta = new Route();
     String[][] resultadoRuta;
-
+   ArrayList<String> localesComida= new ArrayList<>();
     public Lugares2DAO() {
+        
+        localesComida.add("food");
     }
 
     private static void iniciar() {
@@ -61,54 +63,6 @@ public class Lugares2DAO {
 
     }
 
-    public static EntityManagerFactory getEntityManagerFactory() {
-        Map properties = new HashMap();
-        properties.put("javax.persistence.jdbc.user", "root");
-
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PruebaProyectoMapsPU", properties);
-
-        return emf;
-    }
-
-    /*prueba con id 1*/
-//    public static float mostrarLatitud() {
-//        float latitud;
-//        EntityManagerFactory emf = getEntityManagerFactory();
-//        EntityManager em = emf.createEntityManager();
-//
-//        EntityTransaction trx = em.getTransaction();
-//        trx.begin();
-//
-//        String hsql = "SELECT c FROM Lugares c where c.id=1";
-//        Query query = em.createQuery(hsql);
-//        Lugares lugares = (Lugares) query.getSingleResult();
-//        latitud = lugares.getLatitud();
-//
-//        em.close();
-//        emf.close();
-//        return latitud;
-//    }
-//
-//    /*prueba con id sdasdadasdasdasdas*/
-//    public static float mostrarLongitud() {
-//        float longitud;
-//        EntityManagerFactory emf = getEntityManagerFactory();
-//        EntityManager em = emf.createEntityManager();
-//
-//        EntityTransaction trx = em.getTransaction();
-//        trx.begin();
-//
-//        String hsql = "SELECT c FROM Lugares c where c.id=1";
-//
-//        Query query = em.createQuery(hsql);
-//        //List<Lugares> list = query.getResultList();
-//        Lugares lugares = (Lugares) query.getSingleResult();
-//        longitud = lugares.getLongitud();
-//
-//        em.close();
-//        emf.close();
-//        return longitud;
-//    }
 
     public String[][] getResultadoPlaces() {
         return resultadoPlaces;
@@ -118,8 +72,12 @@ public class Lugares2DAO {
         this.resultadoPlaces = resultadoPlaces;
     }
 
+       
     public static ArrayList<Lugares> buscarLocales(String zonaSalida) throws UnsupportedEncodingException, MalformedURLException {
-       MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
+         
+       
+        
+        MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
         String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
         MapsJava.APIkeyCheck(key);
         System.out.println(MapsJava.APIkeyCheck(key));
@@ -170,7 +128,7 @@ public class Lugares2DAO {
         Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Puerta del sol");
 
         Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-        test2.buscarLocales("Puerta del sol");
+        test2.buscarLocales("Malaga");
         
      }
 }

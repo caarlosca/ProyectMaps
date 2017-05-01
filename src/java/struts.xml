@@ -22,16 +22,16 @@
             <result name="error">/error.jsp</result>
         </action>
         
-        <action name="organizar" class="action.OrganizarRutaAction">
+<!--        <action name="organizar" class="action.OrganizarRutaAction">
             <result name="success">/mostrarsugerencia.jsp</result>
              <result name="input">/organizarRuta.jsp</result>
-        </action>
+        </action>-->
         
         <action name="mostrarRuta" class="action.MostrarRutaAction" >
             <result name="success">/mostrarRuta.jsp</result>
         </action>
-         <action name="mostrarsugerencia" class="action.LugaresAction" >
-            <result name="success">/mostrarsugerencia.jsp</result>
+         <action name="organizar" class="action.LugaresAction" >
+            <result name="success">/muestraLugar.jsp</result>
         </action>
 
         

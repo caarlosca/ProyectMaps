@@ -40,7 +40,7 @@ public class LugaresAction extends ActionSupport{
          public String execute() throws Exception {
         
         
-    lugares2=Lugares2DAO.buscarLocales("Puerta del sol");
+    lugares2=Lugares2DAO.buscarLocales("Malaga");
             
         return SUCCESS; 
     }
