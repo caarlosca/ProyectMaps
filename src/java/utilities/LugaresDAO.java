@@ -128,47 +128,7 @@ public class LugaresDAO {
         this.resultadoPlaces = resultadoPlaces;
     }
 
-    private static ArrayList<Lugares> buscarLocales(String zonaSalida) throws UnsupportedEncodingException, MalformedURLException, IOException {
-        MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
-        String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
-        MapsJava.APIkeyCheck(key);
-        System.out.println(MapsJava.APIkeyCheck(key));
-          Geocoding ObjGeocod = new Geocoding();
- Point2D.Double resultadoCD = ObjGeocod.getCoordinates(zonaSalida);
- ArrayList<Lugares> lugares= new ArrayList<Lugares>();
-        Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-        Places ObjPlace = new Places();
-        try {
-            String[][] resultado = ObjPlace.getPlaces(ObjUbicacion2.getLatitud(), ObjUbicacion2.getLongitud(),
-                    3000, "", "", Places.Rankby.distance, null);
 
-            for (int i = 0; i < resultado.length; i++) {
-                System.out.println("Place " + i + ":");
-                for (int j = 0; j < resultado[0].length; j++) {
-                    System.out.print(resultado[i][0] + "\t");
-                     System.out.print(resultado[i][1] + "\t");
-                      System.out.print(resultado[i][2] + "\t");
-                       System.out.print(resultado[i][3] + "\t");
-                       System.out.print(resultado[i][4] + "\t");
-                          String tramo = "Lugar " + i + ":" + "</br>";
-            String nombre = resultado[i][0];
-            String calle = resultado[i][1];
-            double longitud =Double.parseDouble(resultado[i][2]) ;
-             double latitud =Double.parseDouble(resultado[i][3]) ;
-            
-            Lugares l1= new Lugares(nombre, calle, longitud, latitud);
-            lugares.add(l1);
-            
- 
-                }
-                System.out.println("");
-            }
-        } catch (Exception e) {
-            error("Place");
-        }
-
-        return lugares;
-    }
 
     private String[][] rellenarTabla(String[][] datosPlaces) throws IOException {
         String[] columnas = new String[3];
@@ -219,75 +179,7 @@ public class LugaresDAO {
         Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Malaga");
 
         Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-        test.buscarLocales("Toledo");
-//        Ubicacion ObjUbicacion3 = new Ubicacion();
-//        test.calcularRuta("Madrid", "Toledo");
-//MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
-//                   String key= "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
-//               MapsJava.APIkeyCheck(key);
-//            System.out.println( MapsJava.APIkeyCheck(key));
-//            
-//            Places ObjPlace=new Places();
-//            try {
-//                String[][] resultado=ObjPlace.getPlaces(40.4171111, -3.7031133, 
-//                        3000, "", "", Places.Rankby.distance, null);
-//
-//                for(int i=0;i<resultado.length;i++){
-//                    System.out.println("Place " + i + ":");
-//                    for(int j=0;j<resultado[0].length;j++){
-//                        System.out.print(resultado[i][j] + "\t");
-//                    }
-//                    System.out.println("");
-//                }
-//            } catch (Exception e) {
-//                error("Place");
-//            }
-        //  test.rellenarTabla();
-//        float longitud;
-//        float latitud;
-//        
-//        longitud=mostrarLongitud();
-//         latitud=mostrarLatitud();
-//        System.out.println(longitud);
-//        System.out.println(latitud);
-//       String nombre="Museo de cera";
-//       String hsql = "SELECT c FROM Lugares c where c.nombre="+nombre+"";
-//       System.out.println(hsql);
-//           Geocoding ObjGeocod=new Geocoding();
-//         
-//         Point2D.Double resultadoCD=ObjGeocod.getCoordinates("parque Atracciones");
-//         System.out.println("Las coordenadas de:"+nombre +
-//                    resultadoCD.x + "," + resultadoCD.y);
-//         
-//Places ObjPlace=new Places();
-//String[][] resultadoPlaces=ObjPlace.getPlaces(40.4171111, -3.7031133, 3000, "", "", Places.Rankby.prominence, null);
-//for(int i=0;i< resultadoPlaces.length;i++){
-//   System.out.println("Place " + i + ":");
-//   for(int j=0;j< resultadoPlaces[0].length;j++){
-//      System.out.print(resultadoPlaces[i][j] + "\t");
-//   }
-//}
-// GooglePlaces google = new GooglePlaces("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
-//               MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
-//               String key= "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
-//               MapsJava.APIkeyCheck(key);
-//            System.out.println( MapsJava.APIkeyCheck(key));
-//            
-//            Places ObjPlace=new Places();
-//            try {
-//                String[][] resultado=ObjPlace.getPlaces(40.4171111, -3.7031133, 
-//                        3000, "", "", Places.Rankby.distance, null);
-//
-//                for(int i=0;i<resultado.length;i++){
-//                    System.out.println("Place " + i + ":");
-//                    for(int j=0;j<resultado[0].length;j++){
-//                        System.out.print(resultado[i][j] + "\t");
-//                    }
-//                    System.out.println("");
-//                }
-//            } catch (Exception e) {
-//                error("Place");
-//            }
+       
     }
 
 }
