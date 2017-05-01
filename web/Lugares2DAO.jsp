@@ -24,7 +24,7 @@
                     <td> Latitud  </td>
                     
                 </tr>
-                  <s:iterator value="lugares">
+                  <s:iterator value="lugares2">
                 <tr>
                     <td ><s:property value="nombre"/></td>
                     <td><s:property value="calle"/></td>

@@ -118,13 +118,13 @@ public class Lugares2DAO {
         this.resultadoPlaces = resultadoPlaces;
     }
 
-    public static ArrayList<Lugares> buscarLocalesLugareses(String zonaSalida) {
-        MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
+    public static ArrayList<Lugares> buscarLocales(String zonaSalida) throws UnsupportedEncodingException, MalformedURLException {
+       MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
         String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
         MapsJava.APIkeyCheck(key);
         System.out.println(MapsJava.APIkeyCheck(key));
           Geocoding ObjGeocod = new Geocoding();
- Point2D.Double resultadoCD = null;
+ Point2D.Double resultadoCD = ObjGeocod.getCoordinates(zonaSalida);
  ArrayList<Lugares> lugares= new ArrayList<Lugares>();
         Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
         Places ObjPlace = new Places();
@@ -149,6 +149,9 @@ public class Lugares2DAO {
             Lugares l1= new Lugares(nombre, calle, longitud, latitud);
             lugares.add(l1);
             
+          //  Lugares l1= new Lugares( resultado[i][0]);
+          //  lugares.add(l1);
+            
  
                 }
                 System.out.println("");
@@ -156,7 +159,18 @@ public class Lugares2DAO {
         } catch (Exception e) {
             error("Place");
         }
+         
 
         return lugares;
     }
+    
+     public static void main(String ar[]) throws Exception {
+        Lugares2DAO test2 = new Lugares2DAO();
+        Geocoding ObjGeocod = new Geocoding();
+        Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Puerta del sol");
+
+        Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
+        test2.buscarLocales("Puerta del sol");
+        
+     }
 }

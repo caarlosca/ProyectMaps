@@ -33,6 +33,10 @@ public class Lugares implements Serializable {
         this.latitud = latitud;
     }
 
+    public Lugares(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getNombre() {
         return nombre;
     }

@@ -30,7 +30,9 @@
         <action name="mostrarRuta" class="action.MostrarRutaAction" >
             <result name="success">/mostrarRuta.jsp</result>
         </action>
-        
+         <action name="mostrarsugerencia" class="action.LugaresAction" >
+            <result name="success">/mostrarsugerencia.jsp</result>
+        </action>
 
         
     </package>

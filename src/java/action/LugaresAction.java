@@ -17,28 +17,30 @@ import utilities.LugaresDAO;
  * @author admin
  */
 public class LugaresAction extends ActionSupport{
-     ArrayList<Lugares> lugares;
+     ArrayList<Lugares> lugares2;
 
-    public ArrayList<Lugares> getLugares() {
-        return lugares;
-    }
-
-    public void setLugares(ArrayList<Lugares> lugares) {
-        this.lugares = lugares;
+    public LugaresAction(ArrayList<Lugares> lugares2) {
+        this.lugares2 = lugares2;
     }
 
     public LugaresAction() {
     }
 
-    public LugaresAction(ArrayList<Lugares> lugares) {
-        this.lugares = lugares;
+    public ArrayList<Lugares> getLugares2() {
+        return lugares2;
     }
+
+    public void setLugares2(ArrayList<Lugares> lugares2) {
+        this.lugares2 = lugares2;
+    }
+
+    
      
      @Override
          public String execute() throws Exception {
         
         
-    lugares=Lugares2DAO.buscarLocalesLugareses("Malaga");
+    lugares2=Lugares2DAO.buscarLocales("Puerta del sol");
             
         return SUCCESS; 
     }

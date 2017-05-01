@@ -134,7 +134,7 @@ public class LugaresDAO {
         MapsJava.APIkeyCheck(key);
         System.out.println(MapsJava.APIkeyCheck(key));
           Geocoding ObjGeocod = new Geocoding();
- Point2D.Double resultadoCD = ObjGeocod.getCoordinates("zonaSalida");
+ Point2D.Double resultadoCD = ObjGeocod.getCoordinates(zonaSalida);
  ArrayList<Lugares> lugares= new ArrayList<Lugares>();
         Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
         Places ObjPlace = new Places();
@@ -219,7 +219,7 @@ public class LugaresDAO {
         Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Malaga");
 
         Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-        test.buscarLocales("Malaga");
+        test.buscarLocales("Toledo");
 //        Ubicacion ObjUbicacion3 = new Ubicacion();
 //        test.calcularRuta("Madrid", "Toledo");
 //MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
