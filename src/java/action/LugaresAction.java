@@ -18,11 +18,20 @@ import utilities.LugaresDAO;
  */
 public class LugaresAction extends ActionSupport{
      ArrayList<Lugares> lugares2;
-
+  String zonapartida;
     public LugaresAction(ArrayList<Lugares> lugares2) {
         this.lugares2 = lugares2;
     }
 
+    public String getZonapartida() {
+        return zonapartida;
+    }
+
+    public void setZonapartida(String zonapartida) {
+        this.zonapartida = zonapartida;
+    }
+
+  
     public LugaresAction() {
     }
 
@@ -33,14 +42,13 @@ public class LugaresAction extends ActionSupport{
     public void setLugares2(ArrayList<Lugares> lugares2) {
         this.lugares2 = lugares2;
     }
-
+ 
     
      
-     @Override
          public String execute() throws Exception {
+             System.out.println(zonapartida);
         
-        
-    lugares2=Lugares2DAO.buscarLocales("Malaga");
+    lugares2=Lugares2DAO.buscarLocales(zonapartida);
             
         return SUCCESS; 
     }

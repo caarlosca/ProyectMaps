@@ -1,8 +1,3 @@
-<%-- 
-    Document   : Lugares2DAO
-    Created on : 01-may-2017, 16:53:18
-    Author     : admin
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
@@ -12,30 +7,24 @@
         <title>JSP Page</title>
     </head>
     <body>
-             
-        
-
         <table border="2">
-   
-                <tr>
-                    <td>Nombre  </td>
-                    <td>Calle</td>
-                    <td> Longitud</td>
-                    <td> Latitud  </td>
-                    
-                </tr>
-                  <s:iterator value="lugares2">
+            <th colspan="4">Zona de busqueda <s:property value="zonapartida"/></th>
+            <tr>
+
+                <th>Nombre  </th>
+                <th>Calle</td>
+                <th> Longitud</th>
+                <th> Latitud  </th>
+
+            </tr>
+            <s:iterator value="lugares2">
                 <tr>
                     <td ><s:property value="nombre"/></td>
                     <td><s:property value="calle"/></td>
                     <td ><s:property value="longitud"/></td>
                     <td><s:property value="latitud"/></td>
                 </tr>
-
-                
-
-
-</s:iterator>
-</table>
+            </s:iterator>
+        </table>
     </body>
 </html>
