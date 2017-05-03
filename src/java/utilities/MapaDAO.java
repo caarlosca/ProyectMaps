@@ -18,6 +18,7 @@ import maps.java.MapsJava;
 import maps.java.Route;
 import maps.java.ShowMaps;
 import maps.java.StaticMaps;
+import maps.java.StreetView;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -29,7 +30,20 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 public class MapaDAO {
 
     private static WebApplicationContext context;
+    private static ShowMaps ObjShowMap=new ShowMaps();
+    private static String direccionMapa;
+    //String direccionMapa=ObjShowMaps.getURLMap("Madrid, Puerta del Sol");
+private ShowMaps ObjShowMaps=new ShowMaps();
 
+public static void mostrarMapa(Double latitud, Double longitud) throws Exception{
+
+//direccionMapa=ObjShowMaps.getURLMap(latitud,longitud);
+
+    System.out.println(direccionMapa);
+
+//Desktop.getDesktop().browse(new URI(direccionMapa));
+
+}
     public MapaDAO() {
     }
 
@@ -70,14 +84,20 @@ public class MapaDAO {
         String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
         MapsJava.APIkeyCheck(key);
         ShowMaps ObjShowMap = new ShowMaps();
-        ObjShowMap.getURLMap("Madrid, Puerta del Sol");
+        String direccionMapa=ObjShowMap.getURLMap("Madrid, Parque de atracciones");
+        System.out.println(direccionMapa);
 //String direccionMapa=ObjShowMaps.getURLMap(“Madrid, Puerta del Sol”);
-        StaticMaps ObjStatic = new StaticMaps();
+        /*StaticMaps ObjStatic = new StaticMaps();
         Route ObjRout = new Route();
         String[][] resultadoRuta = ObjRout.getRoute("Puerta del Sol", "arguelles", null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
 
         Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(300, 200),
-                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
+                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));*/
+        
+   
+      //String direccionMapa=ObjShowMaps.getURLMap(“Madrid, Puerta del Sol”);
+        
+
 
         //  Toolkit.getDefaultToolkit().createImage(imagenRuta.getSource()); 
 //        
@@ -91,8 +111,9 @@ public class MapaDAO {
 //        ImageIO.write((RenderedImage) imagenRuta, "png", output);
 //        DatatypeConverter.printBase64Binary(output.toByteArray());
 
-        System.out.println(ObjStatic.getStaticMapRoute(new Dimension(300, 200),
-                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0)));
+
+     /*String url=getURLMap.(ObjStatic.getStaticMapRoute(new Dimension(300, 200),
+                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0)));*/
 
 //WritableImage image = SwingFXUtils.toFXImage((BufferedImage) imagenRuta, null);
 //myImageView.setImage(image);
