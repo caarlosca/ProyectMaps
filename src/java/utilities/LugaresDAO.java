@@ -148,11 +148,16 @@ public class LugaresDAO {
         ArrayList<Ruta> ruta= new ArrayList<Ruta>();
         for (int i = 0; i < resultadoRuta.length; i++) {
             //System.out.println("Tramo " + i + ":" + "</br>");
-            String tramo = "Tramo " + i + ":" + "</br>";
+            String tramo = "Tramo " + i + ":" ;
             String tiempo = resultadoRuta[i][0];
             String distancia = resultadoRuta[i][1];
             String indicaciones = resultadoRuta[i][2];
-            Ruta r1= new Ruta(tramo, resultadoRuta[i][0], resultadoRuta[i][1], resultadoRuta[i][2]);
+            indicaciones=indicaciones.replace("<b>", " ");
+            indicaciones=indicaciones.replace("</b>", " ");
+            indicaciones=indicaciones.replace("</b>", " ");
+            indicaciones=indicaciones.replace("<div style=\"font-size:0.9em\">", " ");
+            indicaciones=indicaciones.replace("</div>", " ");
+            Ruta r1= new Ruta(tramo, resultadoRuta[i][0], resultadoRuta[i][1], indicaciones);
             ruta.add(r1);
 
         }
