@@ -21,7 +21,7 @@ public class PersonaAction extends ActionSupport{
     private Persona p1;
 public String execute() {
         
-   p1= new Persona( nombre, email, contrasena);
+   p1= new Persona(id, nombre, email, contrasena);
         PersonaDao.insertar(p1);
         return SUCCESS;
     }
