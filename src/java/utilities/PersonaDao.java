@@ -1,8 +1,5 @@
 package utilities;
 
-import static com.opensymphony.xwork2.Action.ERROR;
-import static com.opensymphony.xwork2.Action.SUCCESS;
-import java.awt.geom.Point2D;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +9,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.servlet.ServletContext;
-import maps.java.Geocoding;
 import modelo.Persona;
 
 import org.apache.struts2.ServletActionContext;

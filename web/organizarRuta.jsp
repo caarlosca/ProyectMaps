@@ -15,7 +15,11 @@
     <body>
                    <s:form action="organizar"  theme="simple">
                 <table id="tabla">
+                    
+                    
+
                     <tr> 
+                        td><s:textfield cssClass="fecha" label="fecha" type="date" name="fecha" /></td>
                         <td colspan="3" align="center"><h2><b>Organizar Ruta: </b></h2></td>
                     </tr>
         

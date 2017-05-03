@@ -64,19 +64,21 @@ public static void mostrarMapa(Double latitud, Double longitud) throws Exception
 
     }
 
-    public static String creaURLmapa(String zonaSalida) throws Exception {
+    public static Image creaURLmapa() throws Exception {
         Route ObjRout = new Route();
-
+ StaticMaps ObjStatic = new StaticMaps();
         StaticMaps ObjStatMap = new StaticMaps();
-        Image resultadoMapa = ObjStatMap.getStaticMap(zonaSalida, 14, new Dimension(300, 300),
-                3, StaticMaps.Format.png, StaticMaps.Maptype.hybrid);
-        String mapaURL = MapsJava.getLastRequestURL();
-        return mapaURL;
+//        Image resultadoMapa = ObjStatMap.getStaticMap(zonaSalida, 14, new Dimension(300, 300),
+//                3, StaticMaps.Format.png, StaticMaps.Maptype.hybrid);
+       
+        String[][] resultadoRuta = ObjRout.getRoute("Puerta del Sol", "arguelles", null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
+        
+         Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(300, 200),
+                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
+        return imagenRuta;
     }
 
-    public Image qie(BufferedImage bi) {
-        return Toolkit.getDefaultToolkit().createImage(bi.getSource());
-    }
+    
 
     public static void main(String ar[]) throws Exception {
 //        MapaDAO test2 = new MapaDAO();
@@ -84,16 +86,16 @@ public static void mostrarMapa(Double latitud, Double longitud) throws Exception
         String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
         MapsJava.APIkeyCheck(key);
         ShowMaps ObjShowMap = new ShowMaps();
-        String direccionMapa=ObjShowMap.getURLMap("Madrid, Parque de atracciones");
-        System.out.println(direccionMapa);
+//        String direccionMapa=ObjShowMap.getURLMap("Madrid, Parque de atracciones");
+//        System.out.println(direccionMapa);
 //String direccionMapa=ObjShowMaps.getURLMap(“Madrid, Puerta del Sol”);
-        /*StaticMaps ObjStatic = new StaticMaps();
+        StaticMaps ObjStatic = new StaticMaps();
         Route ObjRout = new Route();
         String[][] resultadoRuta = ObjRout.getRoute("Puerta del Sol", "arguelles", null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
 
         Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(300, 200),
-                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));*/
-        
+                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
+          System.out.println(imagenRuta);
    
       //String direccionMapa=ObjShowMaps.getURLMap(“Madrid, Puerta del Sol”);
         
@@ -107,13 +109,13 @@ public static void mostrarMapa(Double latitud, Double longitud) throws Exception
 //
 //String base64bytes = Base64.encode(bytes);
 //String src = "data:image/png;base64," + base64bytes;
-//        ByteArrayOutputStream output = new ByteArrayOutputStream();
-//        ImageIO.write((RenderedImage) imagenRuta, "png", output);
-//        DatatypeConverter.printBase64Binary(output.toByteArray());
-
-
-     /*String url=getURLMap.(ObjStatic.getStaticMapRoute(new Dimension(300, 200),
-                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0)));*/
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        ImageIO.write((RenderedImage) imagenRuta, "png", output);
+        DatatypeConverter.printBase64Binary(output.toByteArray());
+//
+//
+//     String url=getURLMap.(ObjStatic.getStaticMapRoute(new Dimension(300, 200),
+//                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0)));
 
 //WritableImage image = SwingFXUtils.toFXImage((BufferedImage) imagenRuta, null);
 //myImageView.setImage(image);

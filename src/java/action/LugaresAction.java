@@ -7,6 +7,7 @@ package action;
 
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
+import java.awt.Image;
 import java.util.ArrayList;
 import modelo.*;
 import utilities.Lugares2DAO;
@@ -20,7 +21,7 @@ import utilities.MapaDAO;
 public class LugaresAction extends ActionSupport{
      ArrayList<Lugares> lugares2;
   String zonapartida;
-    String urlMapa;
+    Image urlMapa;
     public LugaresAction(ArrayList<Lugares> lugares2) {
         this.lugares2 = lugares2;
     }
@@ -51,7 +52,7 @@ public class LugaresAction extends ActionSupport{
              System.out.println(zonapartida);
         
     lugares2=Lugares2DAO.buscarLocales(zonapartida);
-             urlMapa=MapaDAO.creaURLmapa(zonapartida);
+             urlMapa=MapaDAO.creaURLmapa();
         return SUCCESS; 
     }
 }

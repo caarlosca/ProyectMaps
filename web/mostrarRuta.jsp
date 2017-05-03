@@ -18,7 +18,8 @@
         
 
         <table border="2">
-          
+                      <th><s:property value="imagenRuta"/></th>
+             <th colspan="4">Zona de busqueda <s:property value="imagenRuta"/></th>
                 <tr>
                     <td>Tramo  </td>
                     <td>Tiempo</td>
