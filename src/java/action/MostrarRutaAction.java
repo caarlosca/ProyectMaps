@@ -44,7 +44,7 @@ public class MostrarRutaAction extends ActionSupport{
     public String execute() throws Exception {
         
         
-    ruta=LugaresDAO.calcularRuta("Madrid", "Toledo");
+    ruta=LugaresDAO.calcularRuta("parque de atracciones", "puerta del sol");
             
         return SUCCESS; 
     }
