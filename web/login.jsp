@@ -1,36 +1,53 @@
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <style>
-        #fondo{
-            background-color: 
-                #0077BE;
-        }
-        .campo{
-            font-size: 12px;
-            font-weight: bold;
-            background-color:cyan; 
-            
-        }
-        
-        #tabla{
-            background-color:beige;
-        }
-        
-        #centrar
-        {
+
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            <meta name="description" content="">
+            <meta name="author" content="">
+            <link rel="icon" href="bootstrap-3.3.6/docs/favicon.ico">
+
+            <title>Descubre España</title>
+
+            <!-- Bootstrap core CSS -->
+            <link href="bootstrap-3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <link href="bootstrap-sass-3.3.6/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+            <!-- Custom styles for this template -->
+            <link href="navbar-static-top.css" rel="stylesheet">
+
+            <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+            <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+            <script src="bootstrap-sass-3.3.6/assets/js/ie-emulation-modes-warning.js"></script>
+
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+              <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+            <!-- Custom styles for this template -->
+            <link href="bootstrap-3.3.6/docs/examples/carousel/carousel.css" rel="stylesheet">
+            <link href="style.css" rel="stylesheet">
+
+        </head>
+        <style>
+            #centrar{
+                background: black;
+                opacity: 0.7;
                 position: absolute;
                 /*nos posicionamos en el centro del navegador*/
-                top:50%;
-                left:50%;
+                top:35%;
+                left:35%;
                 /*determinamos una anchura*/
-                width:700px;
+                width:450px;
                 /*indicamos que el margen izquierdo, es la mitad de la anchura*/
                 margin-left:-400px;
                 /*determinamos una altura*/
@@ -39,43 +56,123 @@
                 margin-top:-150px;
 		
                 padding:5px;
-        }
-    </style>
-    <body id="fondo" >
+            }
+        </style>    
+            
+        <body style="background-image: url('images/woodTexture4.png');">
+            <div class="navbar-wrapper">
+                <div class="container">
+                    <!-- Static navbar -->
+                    <nav class="navbar navbar-default navbar-static-top">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Descubre Madrid</a>
+                            </div>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="">Home</a></li>
 
+                                    <li><a href="#contact">Contacto</a></li>
 
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    
+                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/mostrarRuta.jsp">Mostrar Ruta</a></li>
+                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/muestraLugarjsp">Mostrar lugares</a></li>
 
-        <div class="error">
-            <s:fielderror/>
-        </div>
-        <div id="centrar">
-            <s:form action="acceso"  theme="simple">
-                <table id="tabla">
-                    <tr> 
-                        <td colspan="3" align="center"><h2><b>INGRESAR:</b></h2></td>
-                    </tr>
-        
-                    <tr>
-                        <td>Email:</td>
-                        <td><s:textfield cssClass="campo" label="Email" name="email"/></td>
-                        <td><s:property value="getFieldErrors().get('email')[0]"/> </td>
+                                </ul>
+                            </div><!--/.nav-collapse -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
 
-                    </tr>
-                    <tr>
-                        <td>Contraseña:</td>
-                        <td><s:textfield cssClass="campo" label="Contrasena" name="contrasena"/></td>
-                        <td><s:property value="getFieldErrors().get('contrasena')[0]"/> </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><s:submit value="acceso"/></td>
-                        <td><a href="http://localhost:8084/PruebaProyectoMaps/mostrar"> mostrar </a></td>                 
-                    </tr>
-                    <tr>
-                    
-                    </tr>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img class="first-slide" src="images/madrid-hotel-regina.jpg">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>GJC.</h1>
+                                <p>MUEVETE POR LOS MEJORES LUGARES DE ESPAÑA</p>
 
-                </table>
-            </s:form>
-        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="second-slide" src="images/sevilla.jpg"> 
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>GJC.</h1>
+                                <p>ORGANIZA TU RUTA.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img class="third-slide" src="images/Viajar.jpg">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>GJC.</h1>
+                                <p>DESCUBRE TUS POSIBILIDADES.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>   
+            <div id="centrar">
+            <s:form action="acceso" method="post" class="form-signin" width="400px" height="200px" align="center">
+                <h2 class="form-signin-heading">LOGIN USUARIOS</h2>
+            <label for="inputtext" class="sr-only" >Email</label>
+            <td><s:textfield cssClass="form-control" label="Email" name="email" placeholder="Email"/></td>
+            <!--<td><s:property value="getFieldErrors().get('email')[0]"/> </td>-->
+            <label for="inputPassword" class="sr-only">Password</label>
+            <td><s:textfield cssClass="form-control"  label="Contrasena" name="contrasena" placeholder="Contraseña"/></td>
+<!--            <td><s:property value="getFieldErrors().get('contrasena')[0]"/> </td>-->
+           <table>
+                <tr>
+                <td align="right"><input type="submit" class="transaction-type-toggler btn active btn-primary" value="acceso" name="acceso"></td>
+                <td><a href="http://localhost:8084/PruebaProyectoMaps/mostrar">    mostrar </a></td>  
+                </tr>
+            </table>
+        </s:form>
+            </div>
+            
+        <!-- Bootstrap core JavaScript
+       ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="bootstrap-sass-3.3.6/assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+        <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+        <script src="bootstrap-sass-3.3.6/assets/js/vendor/holder.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="bootstrap-sass-3.3.6/assets/js/ie10-viewport-bug-workaround.js"></script>
     </body>
 </html>
+
+
+
+	

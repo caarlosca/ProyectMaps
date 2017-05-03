@@ -27,7 +27,7 @@
                     </tr>
                     <tr>
                         <td>Zona de Partida: </td>
-                        <td><s:textfield cssClass="zonapartida" label="zonapartida" name="zonapartida"/></td>
+                        <td><s:textfield cssClass="zonapartida" label="zonapartida" name="zonaDePartida"/></td>
                         <td><s:property value="getFieldErrors().get('zonaDePartida')[0]"/> </td>
                     </tr>
                     <tr>
