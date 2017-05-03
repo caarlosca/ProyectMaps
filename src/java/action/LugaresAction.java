@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import modelo.*;
 import utilities.Lugares2DAO;
 import utilities.LugaresDAO;
+import utilities.MapaDAO;
 
 /**
  *
@@ -19,6 +20,7 @@ import utilities.LugaresDAO;
 public class LugaresAction extends ActionSupport{
      ArrayList<Lugares> lugares2;
   String zonapartida;
+    String urlMapa;
     public LugaresAction(ArrayList<Lugares> lugares2) {
         this.lugares2 = lugares2;
     }
@@ -49,7 +51,7 @@ public class LugaresAction extends ActionSupport{
              System.out.println(zonapartida);
         
     lugares2=Lugares2DAO.buscarLocales(zonapartida);
-            
+             urlMapa=MapaDAO.creaURLmapa(zonapartida);
         return SUCCESS; 
     }
 }

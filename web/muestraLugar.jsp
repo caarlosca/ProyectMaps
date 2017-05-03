@@ -8,6 +8,8 @@
     </head>
     <body>
         <table border="2">
+            
+            <th><s:property value="urlMapa"/></th>
             <th colspan="4">Zona de busqueda <s:property value="zonapartida"/></th>
             <tr>
 
