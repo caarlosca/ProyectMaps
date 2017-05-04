@@ -93,6 +93,9 @@ public class MapaDAO {
             dir.delete();
             
             
+            
+            
+            
             String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.transit, Route.avoids.nothing);
             
             Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(500, 500),
