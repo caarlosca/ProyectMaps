@@ -31,20 +31,19 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 public class MapaDAO {
 
     private static WebApplicationContext context;
-    private static ShowMaps ObjShowMap=new ShowMaps();
+    private static ShowMaps ObjShowMap = new ShowMaps();
     private static String direccionMapa;
     //String direccionMapa=ObjShowMaps.getURLMap("Madrid, Puerta del Sol");
-private ShowMaps ObjShowMaps=new ShowMaps();
+    private ShowMaps ObjShowMaps = new ShowMaps();
 
-public static void mostrarMapa(Double latitud, Double longitud) throws Exception{
+    public static void mostrarMapa(Double latitud, Double longitud) throws Exception {
 
 //direccionMapa=ObjShowMaps.getURLMap(latitud,longitud);
-
-    System.out.println(direccionMapa);
+        System.out.println(direccionMapa);
 
 //Desktop.getDesktop().browse(new URI(direccionMapa));
+    }
 
-}
     public MapaDAO() {
     }
 
@@ -67,41 +66,53 @@ public static void mostrarMapa(Double latitud, Double longitud) throws Exception
 
     public static Image creaURLmapa() throws Exception {
         Route ObjRout = new Route();
- StaticMaps ObjStatic = new StaticMaps();
+        StaticMaps ObjStatic = new StaticMaps();
         StaticMaps ObjStatMap = new StaticMaps();
 //        Image resultadoMapa = ObjStatMap.getStaticMap(zonaSalida, 14, new Dimension(300, 300),
 //                3, StaticMaps.Format.png, StaticMaps.Maptype.hybrid);
-       
+
         String[][] resultadoRuta = ObjRout.getRoute("Puerta del Sol", "arguelles", null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
-        
-         Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(300, 200),
+
+        Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(300, 200),
                 1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
         return imagenRuta;
     }
 
-    
+    public static void guardarImagen(String zonaPartida, String zonaLlegada) throws Exception {
+        Route ObjRout = new Route();
+        StaticMaps ObjStatic = new StaticMaps();
+        StaticMaps ObjStatMap = new StaticMaps();
+//        Image resultadoMapa = ObjStatMap.getStaticMap(zonaSalida, 14, new Dimension(300, 300),
+//                3, StaticMaps.Format.png, StaticMaps.Maptype.hybrid);
+
+        String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
+
+        Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(500, 500),
+                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
+            File outputfile = new File("C:\\Users\\android\\Documents\\NetBeansProjects\\ProyectMaps\\web\\foto\\saved1.png");
+    ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
+    }
 
     public static void main(String ar[]) throws Exception {
+        
+        guardarImagen("puerta del sol", "cuatro caminos");
 //        MapaDAO test2 = new MapaDAO();
 
-        String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
+       /* String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
         MapsJava.APIkeyCheck(key);
-        ShowMaps ObjShowMap = new ShowMaps();
+        ShowMaps ObjShowMap = new ShowMaps();*/
 //        String direccionMapa=ObjShowMap.getURLMap("Madrid, Parque de atracciones");
 //        System.out.println(direccionMapa);
 //String direccionMapa=ObjShowMaps.getURLMap(“Madrid, Puerta del Sol”);
-        StaticMaps ObjStatic = new StaticMaps();
+        /*StaticMaps ObjStatic = new StaticMaps();
         Route ObjRout = new Route();
         String[][] resultadoRuta = ObjRout.getRoute("Puerta del Sol", "arguelles", null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
 
         Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(300, 200),
                 1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
-          System.out.println(imagenRuta);
-   
-      //String direccionMapa=ObjShowMaps.getURLMap(“Madrid, Puerta del Sol”);
-        
+        System.out.println(imagenRuta);*/
 
-
+        //String direccionMapa=ObjShowMaps.getURLMap(“Madrid, Puerta del Sol”);
         //  Toolkit.getDefaultToolkit().createImage(imagenRuta.getSource()); 
 //        
 //ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -110,11 +121,10 @@ public static void mostrarMapa(Double latitud, Double longitud) throws Exception
 //
 //String base64bytes = Base64.encode(bytes);
 //String src = "data:image/png;base64," + base64bytes;
-         
-    File outputfile = new File("saved.png");
-    ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
-    
-        System.out.println(outputfile);
+        /*File outputfile = new File("saved.png");
+        ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
+
+        System.out.println(outputfile);*/
 //
 //
 //     String url=getURLMap.(ObjStatic.getStaticMapRoute(new Dimension(300, 200),
