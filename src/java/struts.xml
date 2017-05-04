@@ -27,54 +27,14 @@
              <result name="input">/buscarLugar.jsp</result>
         </action>
         
-        <action name="mostrarRuta" class="action.MostrarRutaAction" >
+        <!--action name="mostrarRuta" class="action.MostrarRutaAction" >
             <result name="success">/mostrarRuta.jsp</result>
-        </action>
+        </action-->
          <action name="CrearRuta" class="action.CrearRutaAction" >
-            <result name="success">/MostrarNombre.jsp</result>
+            <result name="success">/mostrarRuta.jsp</result>
         </action>
 
         
     </package>
 
 </struts>
-<!--une metodo para obtener la calle o coordenadas de cada tramo
-	(ya obtenemos cada tramo habria que extraer de cada tramo su calle o coordenadas)
-	 que se enviaran por parametro para mostrar usar el getstreetview streetview  o eeste ejemplo
-
-
-   private void rellenarTabla(String[][] datosPlaces) throws IOException{
-        String[] columnas=new String[3];
-        columnas[0]="Local";columnas[1]="Dirección";columnas[2]="Tipo establecimiento";
-        Object[][] placesReducido=new Object[datosPlaces.length][3];
-            for(int i=0; i<placesReducido.length;i++){
-                placesReducido[i][0]=datosPlaces[i][0].toString();
-                placesReducido[i][1]=datosPlaces[i][1].toString();
-                Image imageCargada;
-                imageCargada=ImageIO.read(new URL(datosPlaces[i][4]));
-                imageCargada=imageCargada.getScaledInstance(20,20,Image.SCALE_FAST);
-                placesReducido[i][2]=new ImageIcon(imageCargada);
-            }
-        TableModel tableModel=new TablaIconos(placesReducido, columnas);
-        this.jTable_Places.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        this.jTable_Places.setModel(tableModel);
-        this.jTable_Places.setRowSelectionInterval(0, 0);
-    }
-    
-     private void dibujarMapa(String centroMapa) throws MalformedURLException, UnsupportedEncodingException{
-        StaticMaps ObjStatic=new StaticMaps();
-        Image imagenRuta=ObjStatic.getStaticMap(centroMapa, 14, new Dimension(302,200),
-                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap);
-        this.jLabel_Mapa.setIcon(new ImageIcon(imagenRuta));
-    }
-    
-    private void dibujarStreetView(String direccion) throws MalformedURLException, UnsupportedEncodingException {
-         StreetView ObjStreet=new StreetView();
-         Image imagenStreet=ObjStreet.getStreetView(direccion, new Dimension(302,200),
-                 fov, -1,-100);
-         this.jLabel_StreetView.setIcon(new ImageIcon(imagenStreet));
-    }
-
-Crear una ruta, listar sitios(lugares) con los datos que nos han pasado por el formulario organizar ruta
-Marcar varios sitios(lugares) y crear una ruta con 3 sitios 
-Mostramos un mapa con la ruta y los waypoints de cada  sitios(lugares)-->

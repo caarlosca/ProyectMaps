@@ -64,7 +64,7 @@ public class MapaDAO {
 
     }
 
-    public static Image creaURLmapa() throws Exception {
+    /*public static Image creaURLmapa() throws Exception {
         Route ObjRout = new Route();
         StaticMaps ObjStatic = new StaticMaps();
         StaticMaps ObjStatMap = new StaticMaps();
@@ -76,7 +76,7 @@ public class MapaDAO {
         Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(300, 200),
                 1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
         return imagenRuta;
-    }
+    }*/
 
     public static void guardarImagen(String zonaPartida, String zonaLlegada) throws Exception {
         Route ObjRout = new Route();

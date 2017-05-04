@@ -24,32 +24,25 @@ public class CrearRutaAction extends ActionSupport {
 
     String NombreLugar;
     String NombreSalida;
- ArrayList<Ruta> lugares2;
+    ArrayList<Ruta> ruta;
 
-    public ArrayList<Ruta> getLugares2() {
-        return lugares2;
+    public CrearRutaAction() {
     }
 
-    public void setLugares2(ArrayList<Ruta> lugares2) {
-        this.lugares2 = lugares2;
-    }
-
-    public CrearRutaAction(String NombreLugar, String NombreSalida, ArrayList<Ruta> lugares2) {
+    public CrearRutaAction(String NombreLugar, String NombreSalida, ArrayList<Ruta> ruta) {
         this.NombreLugar = NombreLugar;
         this.NombreSalida = NombreSalida;
-        this.lugares2 = lugares2;
+        this.ruta = ruta;
     }
 
-    public CrearRutaAction(ArrayList<Ruta> lugares2) {
-        this.lugares2 = lugares2;
+
+
+    public String getNombreLugar() {
+        return NombreLugar;
     }
- 
- 
- 
- 
-    public CrearRutaAction(String NombreLugar, String NombreSalida) {
+
+    public void setNombreLugar(String NombreLugar) {
         this.NombreLugar = NombreLugar;
-        this.NombreSalida = NombreSalida;
     }
 
     public String getNombreSalida() {
@@ -60,25 +53,22 @@ public class CrearRutaAction extends ActionSupport {
         this.NombreSalida = NombreSalida;
     }
 
-    public CrearRutaAction() {
+    public ArrayList<Ruta> getRuta() {
+        return ruta;
     }
 
-    public String getNombreLugar() {
-        return NombreLugar;
+    public void setRuta(ArrayList<Ruta> ruta) {
+        this.ruta = ruta;
     }
 
-    public void setNombreLugar(String NombreLugar) {
-        this.NombreLugar = NombreLugar;
-    }
 
-    public CrearRutaAction(String NombreLugar) {
-        this.NombreLugar = NombreLugar;
-    }
+
+
 
     public String execute() {
         try {
             
-           lugares2 =LugaresDAO.calcularRuta(NombreSalida, NombreLugar);
+           ruta =LugaresDAO.calcularRuta(NombreSalida, NombreLugar);
             MapaDAO.guardarImagen(NombreSalida, NombreLugar);
             
         } catch (Exception ex) {
