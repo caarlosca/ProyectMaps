@@ -12,6 +12,11 @@ import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletContext;
 import javax.xml.bind.DatatypeConverter;
@@ -23,6 +28,7 @@ import maps.java.StreetView;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+import constantes.Constantes;
 
 /**
  *
@@ -78,24 +84,44 @@ public class MapaDAO {
         return imagenRuta;
     }*/
 
-    public static void guardarImagen(String zonaPartida, String zonaLlegada) throws Exception {
-        Route ObjRout = new Route();
-        StaticMaps ObjStatic = new StaticMaps();
-        StaticMaps ObjStatMap = new StaticMaps();
-
-        
-
-        String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
-
-        Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(500, 500),
-                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
-            File outputfile = new File("C:\\Users\\android\\Documents\\NetBeansProjects\\ProyectMaps\\web\\foto\\saved1.png");
-    ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
+    public static void guardarImagen(String zonaPartida, String zonaLlegada) {
+        try {
+            Route ObjRout = new Route();
+            StaticMaps ObjStatic = new StaticMaps();
+            StaticMaps ObjStatMap = new StaticMaps();
+            File dir=new File(Constantes.getDIR());
+            dir.delete();
+            
+            
+            
+            String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.transit, Route.avoids.nothing);
+            
+            Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(500, 500),
+                    1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
+            
+           dir.mkdir();
+            File outputfile = new File(Constantes.getRUTA_IMG()+"foto\\saved1.png");
+            if(outputfile.exists()){
+                outputfile.delete();
+                ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
+            }else{
+                ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
+            }
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MapaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(MapaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MapaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
     }
+    
 
     public static void main(String ar[]) throws Exception {
         
-        guardarImagen("puerta del sol", "cuatro caminos");
+        //guardarImagen("Malaga", "cuatro Vientos, madrid");
+        //System.out.println(Constantes.getRUTA_IMG()+"foto\\saved1.png");
 
     }
 }

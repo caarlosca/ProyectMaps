@@ -26,7 +26,9 @@ public class CrearRutaAction extends ActionSupport {
     String NombreSalida;
     ArrayList<Ruta> ruta;
 
-    public CrearRutaAction() {
+    public CrearRutaAction() throws Exception {
+        
+        
     }
 
     public CrearRutaAction(String NombreLugar, String NombreSalida, ArrayList<Ruta> ruta) {
@@ -67,9 +69,9 @@ public class CrearRutaAction extends ActionSupport {
 
     public String execute() {
         try {
-            
-           ruta =LugaresDAO.calcularRuta(NombreSalida, NombreLugar);
             MapaDAO.guardarImagen(NombreSalida, NombreLugar);
+           ruta =LugaresDAO.calcularRuta(NombreSalida, NombreLugar);
+            
             
         } catch (Exception ex) {
             Logger.getLogger(CrearRutaAction.class.getName()).log(Level.SEVERE, null, ex);
