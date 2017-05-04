@@ -50,7 +50,7 @@
 
 		
                 font-size: 5%;
-		top:25%;
+		top:27%;
 
 		left:45%;
 
@@ -133,7 +133,6 @@
            
             <div id="centrar">
                 
-            <img src="<s:property></s:property>" alt="no encuentra la imagen"/>
 
                 <table class="table table-striped" id="tamano1">
                     <th><s:property value="imagenRuta"/></th>
