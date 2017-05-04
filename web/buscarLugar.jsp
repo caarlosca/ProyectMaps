@@ -13,6 +13,8 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
+        
                    <s:form action="oragnizar"  theme="simple">
                 <table id="tabla">
                     

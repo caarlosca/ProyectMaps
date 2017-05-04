@@ -65,6 +65,8 @@ public class OrganizarRutaAction extends ActionSupport {
         this.km = km;
     }
 
+    
+    
     public String execute() throws UnsupportedEncodingException, MalformedURLException {
 
         System.out.println(Lugares2DAO.buscarLocales(zonaDePartida));
