@@ -42,28 +42,47 @@ and open the template in the editor.
             <link href="style.css" rel="stylesheet">
 
         </head>
+       
         <style>
             #centrar{
-                background: black;
-                opacity: 0.7;
-                position: absolute;
-                /*nos posicionamos en el centro del navegador*/
-                top:35%;
-                left:35%;
-                /*determinamos una anchura*/
-                width:450px;
-                /*indicamos que el margen izquierdo, es la mitad de la anchura*/
-                margin-left:-400px;
-                /*determinamos una altura*/
+               	
+
+	        background: black;
+                opacity: 0.8;
+
+		position: absolute;
+
 		
-                /*indicamos que el margen superior, es la mitad de la altura*/
-                margin-top:-150px;
+
+		top:75%;
+
+		left:50%;
+
 		
-                padding:5px;
+
+		width:400px;
+
+		
+
+		margin-left:-200px;
+
+		
+
+		height:300px;
+
+		
+
+		margin-top:-150px;
+
+		border:1px solid #808080;
+
+		padding:5px;
+
+	
             }
         </style>    
             
-        <body style="background-image: url('images/woodTexture4.png');">
+        <body style="background-color:#4A7C59;">
             <div class="navbar-wrapper">
                 <div class="container">
                     <!-- Static navbar -->
@@ -151,11 +170,14 @@ and open the template in the editor.
                 <label for="inputtext" class="sr-only" >Nombre:</label>
             <td><s:textfield cssClass="form-control" label="Nombre" name="nombre" placeholder="Nombre"/></td>
             <!--<td><s:property value="getFieldErrors().get('nombre')[0]"/> </td>-->
+            <hr>
             <label for="inputtext" class="sr-only" >Email</label>
-            <td><s:textfield cssClass="form-control" label="Email" name="email" placeholder="Email"/></td>
+            <s:textfield cssClass="form-control" label="Email" name="email" placeholder="Email"/>
             <!--<td><s:property value="getFieldErrors().get('email')[0]"/> </td>-->
+            
             <label for="inputPassword" class="sr-only">Password</label>
-            <td><s:textfield cssClass="form-control"  label="Contrasena" name="contrasena" placeholder="Contraseña"/></td>
+            
+            <s:textfield cssClass="form-control"  label="Contrasena" name="contrasena" placeholder="Contraseña"/>
 <!--            <td><s:property value="getFieldErrors().get('contrasena')[0]"/> </td>-->
            <table>
                 <tr>
