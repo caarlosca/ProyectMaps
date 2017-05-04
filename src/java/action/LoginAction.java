@@ -1,38 +1,30 @@
-
 package action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.validator.annotations.EmailValidator;
-import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
-import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
-import utilities.LugaresDAO;
 import utilities.PersonaDao;
 
 //alaoba
-public class LoginAction extends ActionSupport{
-   
+public class LoginAction extends ActionSupport {
+
     private String email;
     private String contrasena;
-    
-     public String execute() {
+
+    public String execute() {
         //  System.out.println(PersonaDao.login(email, contrasena));
-         System.out.println("**********HOla***********************");
-         
-         if (PersonaDao.login(email, contrasena)) {
-             return SUCCESS;
-         }
-         
-             return ERROR; 
-         
-         
-        
-     }
-     
-         
+        System.out.println("**********HOla***********************");
+
+        if (PersonaDao.login(email, contrasena)) {
+            return SUCCESS;
+        }
+
+        return ERROR;
+
+    }
+
     public String getEmail() {
         return email;
     }
-  
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -44,5 +36,5 @@ public class LoginAction extends ActionSupport{
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-    
+
 }

@@ -12,8 +12,8 @@ package constantes;
 public class Constantes {
     
     
-    static final String RUTA_IMG="C:\\Users\\android\\Documents\\NetBeansProjects\\ProyectMaps\\web\\";
-    static final String DIR="C:\\Users\\android\\Documents\\NetBeansProjects\\ProyectMaps\\web\\foto";
+    static final String RUTA_IMG="C:\\Users\\Curso Mañana\\Documents\\NetBeansProjects\\ProyectMaps\\web\\";
+    static final String DIR="C:\\Users\\Curso Mañana\\Documents\\NetBeansProjects\\ProyectMaps\\web\\";
 
     public static String getRUTA_IMG() {
         return RUTA_IMG;

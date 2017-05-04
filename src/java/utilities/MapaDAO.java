@@ -121,7 +121,8 @@ public class MapaDAO {
     
 
     public static void main(String ar[]) throws Exception {
-        
+                 File miDir = new File (".");
+         System.out.println(miDir.getAbsolutePath());
         //guardarImagen("Malaga", "cuatro Vientos, madrid");
         //System.out.println(Constantes.getRUTA_IMG()+"foto\\saved1.png");
 
