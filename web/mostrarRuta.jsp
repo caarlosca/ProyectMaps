@@ -39,6 +39,9 @@
 
 
 </s:iterator>
+                
 </table>
+    <center><img src="foto\saved1.png" alt="no encuentra la imagen" width="50%" height="80%"/></center>
+
     </body>
 </html>
