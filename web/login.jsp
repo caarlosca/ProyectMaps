@@ -96,7 +96,7 @@
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="http://localhost:8084/PruebaProyectoMaps/index.jsp">Home</a></li>
 
-                                    <li><a href="#contact">Contacto</a></li>
+                                    <li><a href="http://localhost:8084/PruebaProyectoMaps/contacto.jsp">Contacta</a></li>
 
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
@@ -123,7 +123,7 @@
                         <div class="container">
                             <div class="carousel-caption">
                                 <h1>GJC.</h1>
-                                <p>MUEVETE POR LOS MEJORES LUGARES DE ESPAÑA</p>
+                                <p>DISFRUTA DE TU DÍA</p>
 
                             </div>
                         </div>

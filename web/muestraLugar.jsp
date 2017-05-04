@@ -111,14 +111,12 @@
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="http://localhost:8084/PruebaProyectoMaps/index.jsp">Home</a></li>
 
-                                <li><a href="#contact">Contacto</a></li>
+                                <li><a href="http://localhost:8084/PruebaProyectoMaps/contacto.jsp">Contacta</a></li>
 
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
 
-                                <li> <a href="http://localhost:8084/PruebaProyectoMaps/mostrarRuta.jsp">Mostrar Ruta</a></li>
-                                <li> <a href="http://localhost:8084/PruebaProyectoMaps/muestraLugarjsp">Mostrar lugares</a></li>
-
+                                
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div>

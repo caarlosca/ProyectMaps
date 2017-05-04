@@ -89,20 +89,18 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="#">Descubre Madrid</a>
+                                <a class="navbar-brand" href="#">Descubre España</a>
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="">Home</a></li>
 
-                                    <li><a href="#contact">Contacto</a></li>
+                                    <li><a href="http://localhost:8084/PruebaProyectoMaps/contacto.jsp">Contacta</a></li>
 
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     
-                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/mostrarRuta.jsp">Mostrar Ruta</a></li>
-                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/muestraLugarjsp">Mostrar lugares</a></li>
-
+                                   
                                 </ul>
                             </div><!--/.nav-collapse -->
                         </div>

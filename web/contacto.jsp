@@ -1,8 +1,9 @@
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="s" uri="/struts-tags" %>
-
-    <html lang="en">
+<%-- 
+    Document   : contacto
+    Created on : 05-may-2017, 0:00:26
+    Author     : Carlos
+--%>
+<html lang="en">
         <head>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,46 +40,56 @@
         </head>
        
         <style>
-            #centrar{
-               	
+           body{
+    font-family: 'Open Sans', sans-serif;
+    color:#444;}
 
-	        background: black;
-                opacity: 0.8;
+.container{
+    padding:0 100px;}
 
-		position: absolute;
+.one-column-text{
+    padding:80px 130px;}
 
-		
+.one-column-text h2{
+    font-size:42px;
+    font-weight:300;
+    color:#057d9f;
+    line-height:48px;
+    text-align: center;}
 
-		top:75%;
+.one-column-text h3{
+    font-size:24px;
+    font-weight:300;
+    color:#057d9f;
+    text-align: center;
+    line-height:40px;}
+    
+/*-------------------------------------*/
 
-		left:50%;
+.contact-info{
+    margin-top:100px;}
+    
+.contact-info h3{
+    font-weight:300;
+    margin:30px 0;}
+    
+.contact-info p{
+    font-weight:300;}
+    
+.contact-info span{
+    font-size:18px;
+    margin:20px 0 20px 0;
+    font-weight:300;}
 
-		
+.contact-info hr{
+    border:solid 1px #eee;
+    margin:50px 0;}
 
-		width:400px;
-
-		
-
-		margin-left:-200px;
-
-		
-
-		height:150px;
-
-		
-
-		margin-top:-150px;
-
-		border:1px solid #808080;
-
-		padding:5px;
-
-	
-            }
         </style>    
             
-        <body style="background-color:#4A7C59;">
-            <div class="navbar-wrapper">
+        <body style="background-color:#C8D5B9;">
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <div class="navbar-wrapper">
                 <div class="container">
                     <!-- Static navbar -->
                     <nav class="navbar navbar-default navbar-static-top">
@@ -94,12 +105,14 @@
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
-                                    
+                                    <li class="active"><a href="http://localhost:8084/PruebaProyectoMaps/index.jsp">Home</a></li>
+
+                                    <li><a href="#contact">Contacto</a></li>
 
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/index.jsp">Volver a Registrar</a></li>
-                                   
+                                    
+                                    
 
                                 </ul>
                             </div><!--/.nav-collapse -->
@@ -107,66 +120,52 @@
                     </nav>
                 </div>
             </div>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
 
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img class="first-slide" src="images/Temple.jpg">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h1>GJC.</h1>
-                                <p>MUEVETE POR LOS MEJORES LUGARES DE MADRID</p>
+<div class="container">
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        
-                     
-                        <img class="second-slide" src="images/museo.jpg"> 
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h1>GJC.</h1>
-                                <p>ORGANIZA TU RUTA.</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img class="third-slide" src="images/Madrid1.jpg">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h1>GJC.</h1>
-                                <p>DESCUBRE TUS POSIBILIDADES.</p>
-
-                            </div>
-                        </div>
-                    </div>
-
+	<div class="row">
+        <div class="col-md-12 one-column-text">
+            <h2>¡Contáctenos! Queremos Saber de Ud.</h2>
+            <h3>Estamos al otro lado del teléfono y de la pantalla para resolver sus dudas y consultas o simplemente para recibir sus sugerencias y comentarios</h3>
+        </div>
+    </div>
+    
+    <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x9662cf1846549c4d%3A0x72a9d5b05cc5ded6!2sAm%C3%A9rico+Vespucio+Sur+107%2C+Las+Condes%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses-419!2scl!4v1388412285664&wmode=transparent" width="960" height="350" frameborder="0" style="border:2px solid #39aecf" wmode="Opaque">
+</iframe>
+    
+    <div class="row contact-info">
+        <div class="col-md-8">
+            <h3>Pongámonos en Contacto</h3>
+            <p>En GJC dejamos a su disposición la mejor inteligencia legal online 24/7 y estaremos respondiendo sus preguntas todos los días hábiles hasta las 18:00 horas.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <span>Teléfono</span>
+                    <p>España: +34 657 89 34 54</p>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>   
-            <div id="centrar">
-           
-                <h2 align="center"> Debes registrarte primero </h2>
+                <div class="col-md-4">
+                    <span>Email</span>
+                    <p>notificaciones@gjc.com</p>
+                </div>
+                <div class="col-md-4">
+                    <span>Redes Sociales</span>
+                    <p>Facebook:gjc</p>
+                    <p>Twitter:@Gjc</a></p>
+                </div>
             </div>
+            <hr>
+           
             
-        <!-- Bootstrap core JavaScript
-       ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
+        </div>
+        <div class="col-md-4">
+            
+            <h3>Nuestras Oficinas</h3>
+            <p>C/ Explanada 8, 3ª planta, 28040 Madrid<br>España</p>
+        </div>
+    </div>
+    
+</div>
+   <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="bootstrap-sass-3.3.6/assets/js/vendor/jquery.min.js"><\/script>')</script>
         <script src="bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
@@ -176,5 +175,4 @@
         <script src="bootstrap-sass-3.3.6/assets/js/ie10-viewport-bug-workaround.js"></script>
     </body>
 </html>
-
-
+    

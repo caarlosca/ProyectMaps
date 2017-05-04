@@ -113,15 +113,15 @@
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="http://localhost:8084/PruebaProyectoMaps/index.jsp">Home</a></li>
+                                <li class="active"><a href="http://localhost:8084/PruebaProyectoMaps/index.jsp">Inicio</a></li>
 
-                                <li><a href="#contact">Contacto</a></li>
+                                <li><a href="http://localhost:8084/PruebaProyectoMaps/contacto.jsp">Contacta</a></li>
 
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
 
-                                <li> <a href="http://localhost:8084/PruebaProyectoMaps/mostrarRuta.jsp">Mostrar Ruta</a></li>
-                                <li> <a href="http://localhost:8084/PruebaProyectoMaps/muestraLugarjsp">Mostrar lugares</a></li>
+                                <li> <a href="http://localhost:8084/PruebaProyectoMaps/buscarLugar.jsp">Volver a crear una ruta</a></li>
+                                
 
                             </ul>
                         </div><!--/.nav-collapse -->
@@ -164,7 +164,7 @@
         <div id="imagen">
             <center><img src="foto\saved1.png"  /></center>
             
-           <a href="http://localhost:8084/PruebaProyectoMaps/buscarLugar.jsp">Volver a crear una ruta</a>
+           
             
             
   
