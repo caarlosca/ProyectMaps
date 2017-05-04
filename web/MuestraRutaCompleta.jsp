@@ -108,11 +108,11 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="#">Descubre Madrid</a>
+                                <a class="navbar-brand" >Descubre Madrid</a>
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="">Home</a></li>
+                                    <li class="active"><a href="http://localhost:8084/PruebaProyectoMaps/index.jsp">Home</a></li>
 
                                     <li><a href="#contact">Contacto</a></li>
 

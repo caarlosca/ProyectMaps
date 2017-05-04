@@ -42,7 +42,7 @@
                	
 
 	        background: black;
-                opacity: 0.8;
+                opacity: 0.9;
 
 		position: absolute;
 
@@ -114,17 +114,21 @@
             <div id="centrar">
             <s:form action="organizar" method="post" class="form-signin" width="400px" height="200px" align="center">
                 <h2 class="form-signin-heading">ORGANIZAR RUTA</h2>
-          
+                <hr>
             <label for="inputtext" class="sr-only">Zona de Partida:</label>
             <td><s:textfield cssClass="form-control"  label="Zona de partida" name="zonaDePartida" placeholder="Zona de partida"/></td>
 <!--            <td><s:property value="getFieldErrors().get('zonaDePartida')[0]"/> </td>-->
+            <tr><td><br> </td>  </tr>
+                
             <label for="inputPassword" class="sr-only">Kilometros:</label>
              <td><s:textfield cssClass="form-control" label="Kilometros" type="number" value="1" min="1" max="10" name="km"/></td>
                        
              <table>
+                 <tr><td><br> </td>  </tr>
+                <tr><td><br> </td>  </tr>
                 <tr>
                 <td align="right"><input type="submit" class="transaction-type-toggler btn active btn-primary" value="organizar" name="organizar"></td>
-                <td><a href="http://localhost:8084/PruebaProyectoMaps/mostrar">    mostrar </a></td>  
+                 
                 </tr>
             </table>
         </s:form>

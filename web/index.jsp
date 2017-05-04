@@ -68,7 +68,7 @@ and open the template in the editor.
 
 		
 
-		height:300px;
+		height:350px;
 
 		
 
@@ -95,11 +95,11 @@ and open the template in the editor.
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="#">Descubre España</a>
+                                <a class="navbar-brand" >Descubre España</a>
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="">Home</a></li>
+                                    <li class="active"><a href="http://localhost:8084/PruebaProyectoMaps/index.jsp">Home</a></li>
 
                                     <li><a href="#contact">Contacto</a></li>
 
@@ -167,22 +167,29 @@ and open the template in the editor.
             <div id="centrar">
             <s:form action="insertar" method="post" class="form-signin" width="400px" height="200px" align="center">
                 <h2 class="form-signin-heading">REGISTRATE</h2>
+                <hr>
                 <label for="inputtext" class="sr-only" >Nombre:</label>
             <td><s:textfield cssClass="form-control" label="Nombre" name="nombre" placeholder="Nombre"/></td>
             <!--<td><s:property value="getFieldErrors().get('nombre')[0]"/> </td>-->
-            <hr>
+                        <tr><td><br> </td>  </tr>
+
             <label for="inputtext" class="sr-only" >Email</label>
             <s:textfield cssClass="form-control" label="Email" name="email" placeholder="Email"/>
             <!--<td><s:property value="getFieldErrors().get('email')[0]"/> </td>-->
-            
+                        <tr><td><br> </td>  </tr>
+
             <label for="inputPassword" class="sr-only">Password</label>
             
             <s:textfield cssClass="form-control"  label="Contrasena" name="contrasena" placeholder="Contraseña"/>
 <!--            <td><s:property value="getFieldErrors().get('contrasena')[0]"/> </td>-->
            <table>
+                           <tr><td><br> </td>  </tr>
+                                       <tr><td><br> </td>  </tr>
+
+
                 <tr>
                 <td align="right"><input type="submit" class="transaction-type-toggler btn active btn-primary" value="insertar" name="insertar"></td>
-                <td><a href="http://localhost:8084/PruebaProyectoMaps/mostrar">    mostrar </a></td>  
+                 
                 </tr>
             </table>
         </s:form>

@@ -40,26 +40,44 @@
         </head>
         <style>
             #centrar{
-                background: black;
-                opacity: 0.7;
-                position: absolute;
-                /*nos posicionamos en el centro del navegador*/
-                top:35%;
-                left:35%;
-                /*determinamos una anchura*/
-                width:450px;
-                /*indicamos que el margen izquierdo, es la mitad de la anchura*/
-                margin-left:-400px;
-                /*determinamos una altura*/
+               	
+
+	        background: black;
+                opacity: 0.8;
+
+		position: absolute;
+
 		
-                /*indicamos que el margen superior, es la mitad de la altura*/
-                margin-top:-150px;
+
+		top:75%;
+
+		left:50%;
+
 		
-                padding:5px;
+
+		width:400px;
+
+		
+
+		margin-left:-200px;
+
+		
+
+		height:280px;
+
+		
+
+		margin-top:-150px;
+
+		border:1px solid #808080;
+
+		padding:5px;
+
+	
             }
         </style>    
             
-        <body style="background-image: url('images/woodTexture4.png');">
+        <body style="background-color:#4A7C59;">
             <div class="navbar-wrapper">
                 <div class="container">
                     <!-- Static navbar -->
@@ -72,11 +90,11 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="#">Descubre Madrid</a>
+                                <a class="navbar-brand" >Descubre España</a>
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="">Home</a></li>
+                                    <li class="active"><a href="http://localhost:8084/PruebaProyectoMaps/index.jsp">Home</a></li>
 
                                     <li><a href="#contact">Contacto</a></li>
 
@@ -143,17 +161,20 @@
             </div>   
             <div id="centrar">
             <s:form action="acceso" method="post" class="form-signin" width="400px" height="200px" align="center">
-                <h2 class="form-signin-heading">LOGIN USUARIOS</h2>
+                <h2 class="form-signin-heading">INICIO DE SESIÓN</h2>
+                <hr>
             <label for="inputtext" class="sr-only" >Email</label>
             <td><s:textfield cssClass="form-control" label="Email" name="email" placeholder="Email"/></td>
             <!--<td><s:property value="getFieldErrors().get('email')[0]"/> </td>-->
+            <tr><td><br> </td>  </tr>
             <label for="inputPassword" class="sr-only">Password</label>
             <td><s:textfield cssClass="form-control"  label="Contrasena" name="contrasena" placeholder="Contraseña"/></td>
 <!--            <td><s:property value="getFieldErrors().get('contrasena')[0]"/> </td>-->
            <table>
+               <tr><td><br> </td>  </tr>
+                <tr><td><br> </td>  </tr>
                 <tr>
-                <td align="right"><input type="submit" class="transaction-type-toggler btn active btn-primary" value="acceso" name="acceso"></td>
-                <td><a href="http://localhost:8084/PruebaProyectoMaps/mostrar">    mostrar </a></td>  
+                    <td align="right"><input type="submit" class="transaction-type-toggler btn active btn-primary" value="acceso" name="acceso"></td>
                 </tr>
             </table>
         </s:form>
