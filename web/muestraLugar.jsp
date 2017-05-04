@@ -10,7 +10,7 @@
         <table border="2">
             
           
-            <th colspan="4">Zona de busqueda <s:property value="zonapartida"/></th>
+            <th colspan="4">Zona de busqueda <s:property value="zonaDePartida"/></th>
             <tr>
 
                 <th>Nombre  </th>

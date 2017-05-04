@@ -15,7 +15,7 @@
     <body>
 
         
-        
+        <img src="<s:property></s:property>" alt="no encuentra la imagen"/>
 
         <table border="2">
                       <th><s:property value="imagenRuta"/></th>

@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletContext;
 import javax.xml.bind.DatatypeConverter;
@@ -109,9 +110,11 @@ public static void mostrarMapa(Double latitud, Double longitud) throws Exception
 //
 //String base64bytes = Base64.encode(bytes);
 //String src = "data:image/png;base64," + base64bytes;
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        ImageIO.write((RenderedImage) imagenRuta, "png", output);
-        DatatypeConverter.printBase64Binary(output.toByteArray());
+         
+    File outputfile = new File("saved.png");
+    ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
+    
+        System.out.println(outputfile);
 //
 //
 //     String url=getURLMap.(ObjStatic.getStaticMapRoute(new Dimension(300, 200),

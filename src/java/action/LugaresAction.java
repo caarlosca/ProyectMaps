@@ -20,19 +20,27 @@ import utilities.MapaDAO;
  */
 public class LugaresAction extends ActionSupport{
      ArrayList<Lugares> lugares2;
-  String zonapartida;
+  String zonaDePartida;
     Image urlMapa;
+    
     public LugaresAction(ArrayList<Lugares> lugares2) {
         this.lugares2 = lugares2;
     }
 
-    public String getZonapartida() {
-        return zonapartida;
+    public String getZonaDePartida() {
+        return zonaDePartida;
     }
 
-    public void setZonapartida(String zonapartida) {
-        this.zonapartida = zonapartida;
+    public LugaresAction(String zonaDePartida) {
+        this.zonaDePartida = zonaDePartida;
     }
+
+    public LugaresAction(ArrayList<Lugares> lugares2, String zonaDePartida) {
+        this.lugares2 = lugares2;
+        this.zonaDePartida = zonaDePartida;
+    }
+
+   
 
   
     public LugaresAction() {
@@ -49,10 +57,10 @@ public class LugaresAction extends ActionSupport{
     
      
          public String execute() throws Exception {
-             System.out.println(zonapartida);
+             System.out.println(zonaDePartida);
         
-    lugares2=Lugares2DAO.buscarLocales(zonapartida);
-             urlMapa=MapaDAO.creaURLmapa();
+    lugares2=Lugares2DAO.buscarLocales(zonaDePartida);
+           //  urlMapa=MapaDAO.creaURLmapa();
         return SUCCESS; 
     }
 }
