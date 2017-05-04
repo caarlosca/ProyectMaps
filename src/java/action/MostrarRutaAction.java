@@ -56,7 +56,7 @@ public class MostrarRutaAction extends ActionSupport {
     public String execute() throws Exception {
 
         ruta = LugaresDAO.calcularRuta("parque de atracciones", "puerta del sol");
-        imagenRuta = MapaDAO.creaURLmapa();
+        //imagenRuta = MapaDAO.creaURLmapa();
         return SUCCESS;
     }
 
