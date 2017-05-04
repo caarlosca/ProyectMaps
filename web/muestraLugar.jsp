@@ -26,11 +26,12 @@
                     <td ><s:property value="longitud"/></td>
                     <td><s:property value="latitud"/></td>
                     <td>
-                          <s:url id="nombre" action="CrearRuta">
-                                 <s:param name="request_locale"><s:property value="nombre"/></s:param>
+                          <s:url id="nombreee" action="CrearRuta">
+                                 <s:param name="NombreLugar"><s:property value="nombre"/></s:param>
+                                  <s:param name="NombreSalida"><s:property value="zonaDePartida"/></s:param>
                            </s:url>
-                        <s:a href="%{nombre}">
-                            <s:text name="NOMBRE" />
+                        <s:a href="%{nombreee}">
+                            <s:text name="Seleciona un lugar" />
                         </s:a> 
                     </td>
                 </tr>
