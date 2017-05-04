@@ -72,7 +72,7 @@ public class OrganizarRutaAction extends ActionSupport {
         System.out.println(Lugares2DAO.buscarLocales(zonaDePartida));
 
         lugares2 = Lugares2DAO.buscarLocales(zonaDePartida);
-
+        
         return SUCCESS;
     }
 

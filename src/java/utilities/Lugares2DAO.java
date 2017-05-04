@@ -5,6 +5,8 @@
  */
 package utilities;
 
+import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.geom.Point2D;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -21,6 +23,7 @@ import maps.java.Geocoding;
 import maps.java.MapsJava;
 import maps.java.Places;
 import maps.java.Route;
+import maps.java.StreetView;
 import modelo.Lugares;
 import modelo.Ubicacion;
 import org.apache.struts2.ServletActionContext;
@@ -38,10 +41,12 @@ public class Lugares2DAO {
     Places ObjPlaces = new Places();
     Ubicacion ObjUbicacion = new Ubicacion();
     String[][] resultadoPlaces;
-    private double fov = 0.0;
+   
     Route ObjRuta = new Route();
     String[][] resultadoRuta;
     ArrayList<String> localesComida = new ArrayList<>();
+String urlImagen;
+
 
     public Lugares2DAO() {
 
@@ -63,6 +68,14 @@ public class Lugares2DAO {
         iniciar();
         return context;
 
+    }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 
     public String[][] getResultadoPlaces() {
@@ -95,7 +108,7 @@ public class Lugares2DAO {
             ArrayList<String> localesComida = new ArrayList<>();
             localesComida.add("food");
             String[][] resultado = ObjPlace.getPlaces(ObjUbicacion2.getLatitud(), ObjUbicacion2.getLongitud(),
-                    300000, "", "", Places.Rankby.distance,    localesComida);
+                    3000, "", "", Places.Rankby.distance,    localesComida);
 
             for (int i = 0; i < resultado.length; i++) {
                 System.out.println("Place " + i + ":");
@@ -124,10 +137,30 @@ public class Lugares2DAO {
 
         return lugares;
     }
+    public static String ObtenerStreetView(String ZonaSalida)  {
+        String urlImagen = null;
+        
+        try {
+            StreetView ObjStreet=new StreetView();
+            
+            Image imgResultado=ObjStreet.getStreetView("Madrid, Puerta del Sol", new Dimension(300,300),
+                    90, 100, -100);
+            urlImagen=MapsJava.getLastRequestURL();
+            System.out.println("La URL asociada a la imagen es: " + MapsJava.getLastRequestURL());
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Lugares2DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Lugares2DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return urlImagen;
+     
+    }
 
     public static void main(String ar[]) throws Exception {
-       
-Lugares2DAO.buscarLocales("Puerta del sol");
+       StreetView ObjStreet=new StreetView();
+       Lugares2DAO.ObtenerStreetView("Puerta del Sol");
+        
+//Lugares2DAO.buscarLocales("Puerta del sol");
       
 
     }

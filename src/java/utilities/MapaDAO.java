@@ -41,10 +41,9 @@ import javax.swing.table.TableModel;
 public class MapaDAO {
 
     private static WebApplicationContext context;
-    private static ShowMaps ObjShowMap = new ShowMaps();
+
     private static String direccionMapa;
     //String direccionMapa=ObjShowMaps.getURLMap("Madrid, Puerta del Sol");
-    private ShowMaps ObjShowMaps = new ShowMaps();
 
     public static void mostrarMapa(Double latitud, Double longitud) throws Exception {
 
@@ -87,30 +86,25 @@ public class MapaDAO {
                 1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
         return imagenRuta;
     }*/
-
     public static void guardarImagen(String zonaPartida, String zonaLlegada) {
         try {
             Route ObjRout = new Route();
             StaticMaps ObjStatic = new StaticMaps();
-            StaticMaps ObjStatMap = new StaticMaps();
-            File dir=new File(Constantes.getDIR());
+
+            File dir = new File(Constantes.getDIR());
             dir.delete();
-            
-            
-            
-            
-            
+
             String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
-            
+
             Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(500, 500),
                     1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
-            
-           dir.mkdir();
-            File outputfile = new File(Constantes.getRUTA_IMG()+"\\saved1.png");
-            if(outputfile.exists()){
+            System.out.println("La URL asociada a la imagen es: " + MapsJava.getLastRequestURL());
+            dir.mkdir();
+            File outputfile = new File(Constantes.getRUTA_IMG() + "\\saved1.png");
+            if (outputfile.exists()) {
                 outputfile.delete();
                 ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
-            }else{
+            } else {
                 ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
             }
         } catch (MalformedURLException ex) {
@@ -120,43 +114,40 @@ public class MapaDAO {
         } catch (IOException ex) {
             Logger.getLogger(MapaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
+
     }
-    public static String[][] MuestraRutas(String zonaPartida, String zonaLlegada) throws IOException{
-          Route ObjRout = new Route();
-        String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.walking  , Route.avoids.nothing);
-           for(int i=0; i<resultadoRuta.length;i++){
-               
-               for (int j = 0; j <resultadoRuta.length; j++) {
-                   System.out.println(   resultadoRuta[i][2]);
-               }
-                
-              
-                
+
+    public static String[][] MuestraRutas(String zonaPartida, String zonaLlegada) throws IOException {
+        Route ObjRout = new Route();
+        String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
+        for (int i = 0; i < resultadoRuta.length; i++) {
+
+            for (int j = 0; j < resultadoRuta.length; j++) {
+                System.out.println(resultadoRuta[i][2]);
+            }
+
 //                Image imageCargada;
 //                imageCargada=ImageIO.read(new URL(datosPlaces[i][4]));
 //                imageCargada=imageCargada.getScaledInstance(20,20,Image.SCALE_FAST);
 //                placesReducido[i][2]=new ImageIcon(imageCargada);
-            }
+        }
         return resultadoRuta;
     }
+    
+    
 
     public static void main(String ar[]) throws Exception {
-                 File miDir = new File (".");
-         System.out.println(miDir.getAbsolutePath());
-       
-            StaticMaps ObjStatic = new StaticMaps();
-            StaticMaps ObjStatMap = new StaticMaps();
-            File dir=new File(Constantes.getDIR());
-            dir.delete();
-            
-            
-            
-            MapaDAO.MuestraRutas("AMA ARQUITECTOS S.L.P.U.", "Salvador Crossa Ramírez");
-            
-          
+        File miDir = new File(".");
+        System.out.println(miDir.getAbsolutePath());
+
+        StaticMaps ObjStatic = new StaticMaps();
+        StaticMaps ObjStatMap = new StaticMaps();
+        File dir = new File(Constantes.getDIR());
+        dir.delete();
+
+        MapaDAO.guardarImagen("AMA ARQUITECTOS S.L.P.U.", "Salvador Crossa Ramírez");
+
         //guardarImagen("Malaga", "cuatro Vientos, madrid");
         //System.out.println(Constantes.getRUTA_IMG()+"foto\\saved1.png");
-
     }
 }
