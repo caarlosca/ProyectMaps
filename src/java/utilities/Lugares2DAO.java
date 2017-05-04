@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package utilities;
 
 import java.awt.Dimension;
@@ -31,10 +27,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import static utilities.LugaresDAO.error;
 
-/**
- *
- * @author admin
- */
+
 public class Lugares2DAO {
 
     private static WebApplicationContext context;
@@ -160,7 +153,7 @@ String urlImagen;
        StreetView ObjStreet=new StreetView();
        Lugares2DAO.ObtenerStreetView("Puerta del Sol");
         
-//Lugares2DAO.buscarLocales("Puerta del sol");
+
       
 
     }

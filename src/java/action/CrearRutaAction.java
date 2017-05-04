@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package action;
 
 import static com.opensymphony.xwork2.Action.SUCCESS;
@@ -16,10 +11,6 @@ import utilities.Lugares2DAO;
 import utilities.LugaresDAO;
 import utilities.MapaDAO;
 
-/**
- *
- * @author admin
- */
 public class CrearRutaAction extends ActionSupport {
 
     String NombreLugar;
@@ -61,13 +52,9 @@ public class CrearRutaAction extends ActionSupport {
     }
 
     public String execute() {
-       
-        
-        
-        
+
         try {
-            
-            
+
             MapaDAO.guardarImagen(NombreSalida, NombreLugar);
             ruta = LugaresDAO.calcularRuta(NombreSalida, NombreLugar);
 

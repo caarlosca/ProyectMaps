@@ -93,6 +93,7 @@
             padding-left: 35%;
             width: 1450px;
         }
+        a { color: #FF0000; }
     </style>    
 
     <body style="background-color: #4A7C59;">
@@ -163,9 +164,12 @@
         <div id="imagen">
             <center><img src="foto\saved1.png"  /></center>
             
+           <a href="http://localhost:8084/PruebaProyectoMaps/buscarLugar.jsp">Volver a crear una ruta</a>
+            
             
   
         </div>
+                
 
         <!-- Bootstrap core JavaScript
        ================================================== -->

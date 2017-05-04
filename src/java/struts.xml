@@ -27,9 +27,6 @@
              <result name="input">/buscarLugar.jsp</result>
         </action>
         
-        <!--action name="mostrarRuta" class="action.MostrarRutaAction" >
-            <result name="success">/mostrarRuta.jsp</result>
-        </action-->
          <action name="CrearRuta" class="action.CrearRutaAction" >
             <result name="success">/MuestraRutaCompleta.jsp</result>
         </action>

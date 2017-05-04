@@ -1,11 +1,5 @@
 package modelo;
 
-/**
- *
- * @author Luis Marcos
- */
-
-//adsd
 public class Ubicacion {
     
     private  double latitud;

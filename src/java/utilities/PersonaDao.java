@@ -92,7 +92,6 @@ public class PersonaDao {
         Query consultaCreada = em.createQuery(consultaHSQL);
         
 
-      // String test= (String) consulaCreada.getSingleResult();
       List<Persona> listaLogin= consultaCreada.getResultList();
       
       comprobar = !listaLogin.isEmpty();

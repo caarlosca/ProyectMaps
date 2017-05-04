@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 @Entity
-//@NamedQuery(name="registro.dameTodos",query="from registro r")
 public class Persona implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

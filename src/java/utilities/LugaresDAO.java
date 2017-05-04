@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package utilities;
 
 import java.awt.Image;
@@ -25,12 +21,7 @@ import modelo.Ubicacion;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
-//import se.walkercrou.places.GooglePlaces;
 
-/**
- *
- * @author Curso Mañana
- */
 public class LugaresDAO {
 
     private static WebApplicationContext context;
@@ -70,45 +61,7 @@ public class LugaresDAO {
         return emf;
     }
 
-    /*prueba con id 1*/
-//    public static float mostrarLatitud() {
-//        float latitud;
-//        EntityManagerFactory emf = getEntityManagerFactory();
-//        EntityManager em = emf.createEntityManager();
-//
-//        EntityTransaction trx = em.getTransaction();
-//        trx.begin();
-//
-//        String hsql = "SELECT c FROM Lugares c where c.id=1";
-//        Query query = em.createQuery(hsql);
-//        Lugares lugares = (Lugares) query.getSingleResult();
-//        latitud = lugares.getLatitud();
-//
-//        em.close();
-//        emf.close();
-//        return latitud;
-//    }
-//
-//    /*prueba con id sdasdadasdasdasdas*/
-//    public static float mostrarLongitud() {
-//        float longitud;
-//        EntityManagerFactory emf = getEntityManagerFactory();
-//        EntityManager em = emf.createEntityManager();
-//
-//        EntityTransaction trx = em.getTransaction();
-//        trx.begin();
-//
-//        String hsql = "SELECT c FROM Lugares c where c.id=1";
-//
-//        Query query = em.createQuery(hsql);
-//        //List<Lugares> list = query.getResultList();
-//        Lugares lugares = (Lugares) query.getSingleResult();
-//        longitud = lugares.getLongitud();
-//
-//        em.close();
-//        emf.close();
-//        return longitud;
-//    }
+
 
     public String[][] getResultadoPlaces() {
         return resultadoPlaces;
@@ -147,7 +100,6 @@ public class LugaresDAO {
         String[][] resultadoRuta = ObjRout.getRoute(direccionSalida, direccionLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
         ArrayList<Ruta> ruta= new ArrayList<Ruta>();
         for (int i = 0; i < resultadoRuta.length; i++) {
-            //System.out.println("Tramo " + i + ":" + "</br>");
             String tramo = "Tramo " + i + ":" ;
             String tiempo = resultadoRuta[i][0];
             String distancia = resultadoRuta[i][1];
