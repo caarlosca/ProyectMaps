@@ -134,6 +134,8 @@ and open the template in the editor.
                         </div>
                     </div>
                     <div class="item">
+                        
+                     
                         <img class="second-slide" src="images/museo.jpg"> 
                         <div class="container">
                             <div class="carousel-caption">

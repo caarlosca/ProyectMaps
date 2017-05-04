@@ -29,6 +29,10 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import constantes.Constantes;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -96,13 +100,13 @@ public class MapaDAO {
             
             
             
-            String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.transit, Route.avoids.nothing);
+            String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
             
             Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(500, 500),
                     1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
             
            dir.mkdir();
-            File outputfile = new File(Constantes.getRUTA_IMG()+"foto\\saved1.png");
+            File outputfile = new File(Constantes.getRUTA_IMG()+"\\saved1.png");
             if(outputfile.exists()){
                 outputfile.delete();
                 ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
@@ -118,11 +122,39 @@ public class MapaDAO {
         }
     
     }
-    
+    public static String[][] MuestraRutas(String zonaPartida, String zonaLlegada) throws IOException{
+          Route ObjRout = new Route();
+        String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.walking  , Route.avoids.nothing);
+           for(int i=0; i<resultadoRuta.length;i++){
+               
+               for (int j = 0; j <resultadoRuta.length; j++) {
+                   System.out.println(   resultadoRuta[i][2]);
+               }
+                
+              
+                
+//                Image imageCargada;
+//                imageCargada=ImageIO.read(new URL(datosPlaces[i][4]));
+//                imageCargada=imageCargada.getScaledInstance(20,20,Image.SCALE_FAST);
+//                placesReducido[i][2]=new ImageIcon(imageCargada);
+            }
+        return resultadoRuta;
+    }
 
     public static void main(String ar[]) throws Exception {
                  File miDir = new File (".");
          System.out.println(miDir.getAbsolutePath());
+       
+            StaticMaps ObjStatic = new StaticMaps();
+            StaticMaps ObjStatMap = new StaticMaps();
+            File dir=new File(Constantes.getDIR());
+            dir.delete();
+            
+            
+            
+            MapaDAO.MuestraRutas("AMA ARQUITECTOS S.L.P.U.", "Salvador Crossa Ramírez");
+            
+          
         //guardarImagen("Malaga", "cuatro Vientos, madrid");
         //System.out.println(Constantes.getRUTA_IMG()+"foto\\saved1.png");
 

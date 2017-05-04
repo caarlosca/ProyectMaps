@@ -5,8 +5,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 
-<html lang="en">
-    <head>
+<html lang="en" >
+    <head >
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -161,7 +161,10 @@
 
         </div>
         <div id="imagen">
-            <center><img src="foto\saved1.png" alt="no encuentra la imagen" width="50%" height="80%"/></center>
+            <center><img src="foto\saved1.png"  /></center>
+            
+            
+  
         </div>
 
         <!-- Bootstrap core JavaScript

@@ -144,7 +144,7 @@ public class LugaresDAO {
 
     public static ArrayList<Ruta> calcularRuta(String direccionSalida, String direccionLlegada) throws Exception {
         Route ObjRout = new Route();
-        String[][] resultadoRuta = ObjRout.getRoute(direccionSalida, direccionLlegada, null, Boolean.TRUE, Route.mode.driving, Route.avoids.nothing);
+        String[][] resultadoRuta = ObjRout.getRoute(direccionSalida, direccionLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
         ArrayList<Ruta> ruta= new ArrayList<Ruta>();
         for (int i = 0; i < resultadoRuta.length; i++) {
             //System.out.println("Tramo " + i + ":" + "</br>");
@@ -174,7 +174,7 @@ public class LugaresDAO {
         Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Malaga");
 
         Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-       
+       LugaresDAO.calcularRuta("Malaga", "Salvador Crossa Ramírez");
     }
 
 }

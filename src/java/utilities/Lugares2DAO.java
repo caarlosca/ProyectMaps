@@ -45,7 +45,7 @@ public class Lugares2DAO {
 
     public Lugares2DAO() {
 
-        localesComida.add("food");
+        
     }
 
     private static void iniciar() {
@@ -73,20 +73,29 @@ public class Lugares2DAO {
         this.resultadoPlaces = resultadoPlaces;
     }
 
-    public static ArrayList<Lugares> buscarLocales(String ZonaSalida) throws UnsupportedEncodingException, MalformedURLException {
+    public static ArrayList<Lugares> buscarLocales(String ZonaSalida)  {
 
         MapsJava.setKey("AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0");
         String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
         MapsJava.APIkeyCheck(key);
         System.out.println(MapsJava.APIkeyCheck(key));
         Geocoding ObjGeocod = new Geocoding();
-        Point2D.Double resultadoCD = ObjGeocod.getCoordinates(ZonaSalida);
+        Point2D.Double resultadoCD = null;
+        try {
+            resultadoCD = ObjGeocod.getCoordinates(ZonaSalida);
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Lugares2DAO.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(Lugares2DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         ArrayList<Lugares> lugares = new ArrayList<Lugares>();
         Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
         Places ObjPlace = new Places();
         try {
+            ArrayList<String> localesComida = new ArrayList<>();
+            localesComida.add("food");
             String[][] resultado = ObjPlace.getPlaces(ObjUbicacion2.getLatitud(), ObjUbicacion2.getLongitud(),
-                    3000, "", "", Places.Rankby.distance, null);
+                    300000, "", "", Places.Rankby.distance,    localesComida);
 
             for (int i = 0; i < resultado.length; i++) {
                 System.out.println("Place " + i + ":");
@@ -117,12 +126,9 @@ public class Lugares2DAO {
     }
 
     public static void main(String ar[]) throws Exception {
-        Lugares2DAO test2 = new Lugares2DAO();
-        Geocoding ObjGeocod = new Geocoding();
-        Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Puerta del sol");
-
-        Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-        test2.buscarLocales("Malaga");
+       
+Lugares2DAO.buscarLocales("Puerta del sol");
+      
 
     }
 }

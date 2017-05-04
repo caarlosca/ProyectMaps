@@ -61,7 +61,13 @@ public class CrearRutaAction extends ActionSupport {
     }
 
     public String execute() {
+       
+        
+        
+        
         try {
+            
+            
             MapaDAO.guardarImagen(NombreSalida, NombreLugar);
             ruta = LugaresDAO.calcularRuta(NombreSalida, NombreLugar);
 
