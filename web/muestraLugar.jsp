@@ -25,6 +25,14 @@
                     <td><s:property value="calle"/></td>
                     <td ><s:property value="longitud"/></td>
                     <td><s:property value="latitud"/></td>
+                    <td>
+                          <s:url id="nombre" action="CrearRuta">
+                                 <s:param name="request_locale"><s:property value="nombre"/></s:param>
+                           </s:url>
+                        <s:a href="%{nombre}">
+                            <s:text name="NOMBRE" />
+                        </s:a> 
+                    </td>
                 </tr>
             </s:iterator>
         </table>

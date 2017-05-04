@@ -30,9 +30,9 @@
         <action name="mostrarRuta" class="action.MostrarRutaAction" >
             <result name="success">/mostrarRuta.jsp</result>
         </action>
-<!--         <action name="organizar" class="action.LugaresAction" >
-            <result name="success">/organizarRuta.jsp</result>
-        </action>-->
+         <action name="CrearRuta" class="action.CrearRutaAction" >
+            <result name="success">/MostrarNombre.jsp</result>
+        </action>
 
         
     </package>

@@ -82,8 +82,8 @@ public class MapaDAO {
         Route ObjRout = new Route();
         StaticMaps ObjStatic = new StaticMaps();
         StaticMaps ObjStatMap = new StaticMaps();
-//        Image resultadoMapa = ObjStatMap.getStaticMap(zonaSalida, 14, new Dimension(300, 300),
-//                3, StaticMaps.Format.png, StaticMaps.Maptype.hybrid);
+
+        
 
         String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
 
@@ -96,41 +96,6 @@ public class MapaDAO {
     public static void main(String ar[]) throws Exception {
         
         guardarImagen("puerta del sol", "cuatro caminos");
-//        MapaDAO test2 = new MapaDAO();
 
-       /* String key = "AIzaSyDVMXmApLq3pv_tVPwqK5omqwTfNml2bT0";
-        MapsJava.APIkeyCheck(key);
-        ShowMaps ObjShowMap = new ShowMaps();*/
-//        String direccionMapa=ObjShowMap.getURLMap("Madrid, Parque de atracciones");
-//        System.out.println(direccionMapa);
-//String direccionMapa=ObjShowMaps.getURLMap(“Madrid, Puerta del Sol”);
-        /*StaticMaps ObjStatic = new StaticMaps();
-        Route ObjRout = new Route();
-        String[][] resultadoRuta = ObjRout.getRoute("Puerta del Sol", "arguelles", null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
-
-        Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(300, 200),
-                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
-        System.out.println(imagenRuta);*/
-
-        //String direccionMapa=ObjShowMaps.getURLMap(“Madrid, Puerta del Sol”);
-        //  Toolkit.getDefaultToolkit().createImage(imagenRuta.getSource()); 
-//        
-//ByteArrayOutputStream out = new ByteArrayOutputStream();
-//ImageIO.write((RenderedImage) imagenRuta, "PNG", out);
-//byte[] bytes = out.toByteArray();
-//
-//String base64bytes = Base64.encode(bytes);
-//String src = "data:image/png;base64," + base64bytes;
-        /*File outputfile = new File("saved.png");
-        ImageIO.write((RenderedImage) imagenRuta, "png", outputfile);
-
-        System.out.println(outputfile);*/
-//
-//
-//     String url=getURLMap.(ObjStatic.getStaticMapRoute(new Dimension(300, 200),
-//                1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0)));
-
-//WritableImage image = SwingFXUtils.toFXImage((BufferedImage) imagenRuta, null);
-//myImageView.setImage(image);
     }
 }
