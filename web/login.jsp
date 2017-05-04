@@ -83,8 +83,7 @@
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
                                     
-                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/mostrarRuta.jsp">Mostrar Ruta</a></li>
-                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/muestraLugarjsp">Mostrar lugares</a></li>
+                                    
 
                                 </ul>
                             </div><!--/.nav-collapse -->

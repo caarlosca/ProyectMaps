@@ -22,7 +22,7 @@
             <result name="error">/error.jsp</result>
         </action>
         
-        <action name="oragnizar" class="action.OrganizarRutaAction">
+        <action name="organizar" class="action.OrganizarRutaAction">
             <result name="success">/muestraLugar.jsp</result>
              <result name="input">/buscarLugar.jsp</result>
         </action>

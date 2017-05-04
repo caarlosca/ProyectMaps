@@ -76,7 +76,7 @@ and open the template in the editor.
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="#">Descubre Madrid</a>
+                                <a class="navbar-brand" href="#">Descubre España</a>
                             </div>
                             <div id="navbar" class="navbar-collapse collapse">
                                 <ul class="nav navbar-nav">
@@ -86,9 +86,8 @@ and open the template in the editor.
 
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li> <a href="http://localhost:8080/ProyectMaps/login.jsp">Acceso usuarios</a></li>
-                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/mostrarRuta.jsp">Mostrar Ruta</a></li>
-                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/muestraLugarjsp">Mostrar lugares</a></li>
+                                    <li> <a href="http://localhost:8084/PruebaProyectoMaps/login.jsp">Acceso usuarios</a></li>
+                                   
 
                                 </ul>
                             </div><!--/.nav-collapse -->
