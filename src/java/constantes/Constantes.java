@@ -1,12 +1,15 @@
 
 package constantes;
 
+import java.io.File;
+
 
 public class Constantes {
     
-    
-    static final String RUTA_IMG="C:\\Users\\Carlos\\Documents\\NetBeansProjects\\ProyectMaps\\build\\web\\foto";
-    static final String DIR="C:\\Users\\Carlos\\Documents\\NetBeansProjects\\ProyectMaps\\web\\foto";
+    static File miDir = new File("");
+    //String dir=miDir.getAbsolutePath()+"\\build\\web\\foto";
+    static final String RUTA_IMG=miDir.getAbsolutePath()+"\\build\\web\\foto";
+    static final String DIR=miDir.getAbsolutePath()+"\\web\\foto";
 
     public static String getRUTA_IMG() {
         return RUTA_IMG;

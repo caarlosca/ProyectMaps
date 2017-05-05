@@ -116,13 +116,14 @@ public class MapaDAO {
     
 
     public static void main(String ar[]) throws Exception {
-        File miDir = new File(".");
-        System.out.println(miDir.getAbsolutePath());
+    File miDir = new File("");
+    String dir=miDir.getPath()+"\\build\\web\\foto";
+        System.out.println(dir);
 
-        StaticMaps ObjStatic = new StaticMaps();
+        /*StaticMaps ObjStatic = new StaticMaps();
         StaticMaps ObjStatMap = new StaticMaps();
         File dir = new File(Constantes.getDIR());
-        dir.delete();
+        dir.delete();*/
 
         MapaDAO.guardarImagen("AMA ARQUITECTOS S.L.P.U.", "Salvador Crossa Ramírez");
 
