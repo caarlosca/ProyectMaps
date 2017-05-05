@@ -95,10 +95,21 @@ public class LugaresDAO {
         System.err.println("Algo ocurrió, no se pudo ejecutar la función: " + funcionError);
     }
 
-    public static ArrayList<Ruta> calcularRuta(String direccionSalida, String direccionLlegada) throws Exception {
+    public static ArrayList<Ruta> calcularRuta(String direccionSalida, Double latitud, Double longitud) throws Exception {
         Route ObjRout = new Route();
+         Geocoding ObjGeocod1 = new Geocoding();
+
+        ArrayList<String> nombreSitio = ObjGeocod1.getAddress(latitud, longitud);
+        if(nombreSitio.isEmpty()){
+            System.out.println("*************esta vacia");
+        }
+        
+        String direccionLlegada=nombreSitio.get(0);
+                
         String[][] resultadoRuta = ObjRout.getRoute(direccionSalida, direccionLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
         ArrayList<Ruta> ruta= new ArrayList<Ruta>();
+        
+  
         for (int i = 0; i < resultadoRuta.length; i++) {
             String tramo = "Tramo " + i + ":" ;
             String tiempo = resultadoRuta[i][0];
@@ -121,12 +132,18 @@ public class LugaresDAO {
     }
 
     public static void main(String ar[]) throws Exception {
-        LugaresDAO test = new LugaresDAO();
+       /* LugaresDAO test = new LugaresDAO();
         Geocoding ObjGeocod = new Geocoding();
         Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Malaga");
 
         Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-       LugaresDAO.calcularRuta("La Taberna De Kiev Sl", "Salvador Crossa Ramírez");
+       LugaresDAO.calcularRuta("Parque de Atracciones, Madrid", 40.4132295, -3.7512561);*/
+       
+                Geocoding ObjGeocod1 = new Geocoding();
+
+        ArrayList<String> nombreSitio = ObjGeocod1.getAddress(40.4078890, -3.7512152);
+        String direccionLlegada=nombreSitio.get(0);
+        System.out.println(direccionLlegada);
     }
 
 }

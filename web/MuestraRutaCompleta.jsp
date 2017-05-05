@@ -146,10 +146,12 @@
                 </tr>
                 <s:iterator value="ruta">
                     <tr id="tamano">
+                        
                         <td ><s:property value="tramo"/></td>
                         <td><s:property value="tiempo"/></td>
                         <td ><s:property value="distancia"/></td>
                         <td><s:property value="indicaciones"/></td>
+                        
                     </tr>
 
 

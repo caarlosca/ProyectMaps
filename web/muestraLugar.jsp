@@ -149,6 +149,8 @@
                             <s:url id="nombreee" action="CrearRuta">
                                 <s:param name="NombreLugar"><s:property value="nombre"/></s:param>
                                 <s:param name="NombreSalida"><s:property value="zonaDePartida"/></s:param>
+                                <s:param name="longitud2"><s:property value="longitud"/></s:param>
+                                <s:param name="latitud2"><s:property value="latitud"/></s:param>
                             </s:url>
                             <s:a href="%{nombreee}">
                                 <s:text name="Seleciona un lugar" />

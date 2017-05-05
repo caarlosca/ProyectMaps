@@ -26,9 +26,11 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import constantes.Constantes;
 import java.net.URL;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.TableModel;
+import maps.java.Geocoding;
 
 
 public class MapaDAO {
@@ -64,7 +66,7 @@ public class MapaDAO {
     }
 
 
-    public static void guardarImagen(String zonaPartida, String zonaLlegada) {
+    public static void guardarImagen(String zonaPartida, double latitud, double longitud) {
         
         try {
             Route ObjRout = new Route();
@@ -72,8 +74,14 @@ public class MapaDAO {
 
             File dir = new File(Constantes.getDIR());
             dir.delete();
+            
+            Geocoding ObjGeocod1 = new Geocoding();
 
-            String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, zonaLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
+        ArrayList<String> nombreSitio = ObjGeocod1.getAddress(latitud, longitud);
+            
+        String direccionLlegada=nombreSitio.get(0);
+        System.err.println(direccionLlegada);
+            String[][] resultadoRuta = ObjRout.getRoute(zonaPartida, direccionLlegada, null, Boolean.TRUE, Route.mode.walking, Route.avoids.nothing);
 
             Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(500, 500),
                     1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
@@ -125,7 +133,7 @@ public class MapaDAO {
         File dir = new File(Constantes.getDIR());
         dir.delete();*/
 
-        MapaDAO.guardarImagen("AMA ARQUITECTOS S.L.P.U.", "Salvador Crossa Ramírez");
+        //MapaDAO.guardarImagen("AMA ARQUITECTOS S.L.P.U.", "Salvador Crossa Ramírez");
 
     }
 }
