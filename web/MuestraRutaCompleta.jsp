@@ -136,8 +136,7 @@
 
 
             <table class="table table-striped" id="tamano1">
-                <th><s:property value="imagenRuta"/></th>
-                <th colspan="4">Zona de busqueda <s:property value="imagenRuta"/></th>
+              
                 <tr>
                     <td>Tramo  </td>
                     <td>Tiempo</td>

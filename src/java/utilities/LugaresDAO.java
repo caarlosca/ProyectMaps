@@ -126,7 +126,7 @@ public class LugaresDAO {
         Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Malaga");
 
         Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-       LugaresDAO.calcularRuta("Malaga", "Salvador Crossa Ramírez");
+       LugaresDAO.calcularRuta("La Taberna De Kiev Sl", "Salvador Crossa Ramírez");
     }
 
 }

@@ -77,7 +77,7 @@ public class MapaDAO {
 
             Image imagenRuta = ObjStatic.getStaticMapRoute(new Dimension(500, 500),
                     1, StaticMaps.Format.png, StaticMaps.Maptype.roadmap, ObjRout.getPolilines().get(0));
-            System.out.println("La URL asociada a la imagen es: " + MapsJava.getLastRequestURL());
+           // System.out.println("La URL asociada a la imagen es: " + MapsJava.getLastRequestURL());
             dir.mkdir();
             File outputfile = new File(Constantes.getRUTA_IMG() + "\\saved1.png");
             if (outputfile.exists()) {
@@ -117,7 +117,7 @@ public class MapaDAO {
 
     public static void main(String ar[]) throws Exception {
     File miDir = new File("");
-    String dir=miDir.getPath()+"\\build\\web\\foto";
+    String dir=miDir.getAbsolutePath()+"\\build\\web\\foto";
         System.out.println(dir);
 
         /*StaticMaps ObjStatic = new StaticMaps();
