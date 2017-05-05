@@ -131,19 +131,6 @@ public class LugaresDAO {
         return ruta;
     }
 
-    public static void main(String ar[]) throws Exception {
-       /* LugaresDAO test = new LugaresDAO();
-        Geocoding ObjGeocod = new Geocoding();
-        Point2D.Double resultadoCD = ObjGeocod.getCoordinates("Malaga");
 
-        Ubicacion ObjUbicacion2 = new Ubicacion(resultadoCD.x, resultadoCD.y);
-       LugaresDAO.calcularRuta("Parque de Atracciones, Madrid", 40.4132295, -3.7512561);*/
-       
-                Geocoding ObjGeocod1 = new Geocoding();
-
-        ArrayList<String> nombreSitio = ObjGeocod1.getAddress(40.4078890, -3.7512152);
-        String direccionLlegada=nombreSitio.get(0);
-        System.out.println(direccionLlegada);
-    }
 
 }

@@ -149,12 +149,5 @@ String urlImagen;
      
     }
 
-    public static void main(String ar[]) throws Exception {
-       StreetView ObjStreet=new StreetView();
-       Lugares2DAO.ObtenerStreetView("Puerta del Sol");
-        
 
-      
-
-    }
 }
